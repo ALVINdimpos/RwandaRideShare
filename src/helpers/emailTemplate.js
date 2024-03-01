@@ -8,7 +8,7 @@ const mailGenerator = new Mailgen({
     link: 'https://www.RwandaRideShare.com/',
     logo: 'https://www.RwandaRideShare.com/static/media/Darklogo.aae7f3d7c12b50a5eea9.png',
     // Style the header with blue background and padding
-    copyright: 'Copyright © 2023 M&E consulting Group LTD.',
+    copyright: 'Copyright © 2024 Rwanda Share Ride LTD.',
   },
 });
 
@@ -16,26 +16,6 @@ const generateEmail = (type, data) => {
   let emailContent;
 
   switch (type) {
-    case 'SignUp':
-      emailContent = {
-        body: {
-          name: data.fname,
-          intro:
-            '<p style="font-size: 18px; color: #333; margin-bottom: 20px;">Thank you for signing up. Click the link below to set up your RwandaRideShare profile password.</p>',
-          action: {
-            button: {
-              style:
-                'display: inline-block; padding: 10px 20px; font-size: 16px; color: #ffffff; text-decoration: none; background-color: #00cc00; border: 2px solid #00cc00; border-radius: 5px;',
-              text: 'Setup a Password',
-              link: `https://www.RwandaRideShare.com/auth/verify/${data.token}`,
-            },
-          },
-          outro:
-            '<p style="font-size: 16px; color: #777; margin-top: 20px;">This link will expire in 24 hours from the time you received this email. If you did not set your password in time, please contact <a href="mailto:support@RwandaRideShare.com" style="color: #007bff; text-decoration: none;">support@RwandaRideShare.com</a> for support.</p>',
-        },
-      };
-
-      break;
     //case Reset password
     case 'ResetPassword':
       emailContent = {
@@ -77,19 +57,209 @@ const generateEmail = (type, data) => {
                 ${data.phone}</strong>. For more information on RwandaRideShare please visit our <a href="https://www.RwandaRideShare.com/">website</a>`,
         },
       };
-    default:
-      // Default template
+    case 'tripBooked':
       emailContent = {
         body: {
-          name: data.name,
-          intro:
-            'Welcome to RwandaRideShare! We’re very excited to have you on board.',
+          name: data.driver,
+          intro: `Great news! Your trip has been successfully booked by a passenger. 🎉 Thank you for offering your ride and contributing to our community of travelers.
+
+Here are the details of the booked trip:
+- Passenger: ${data.passenger}
+- Pickup Point: ${data.origin}
+- Destination: ${data.destination}
+- Travel Date: ${data.travelDate}
+
+Please ensure you and the passenger coordinate any additional details for a smooth trip experience. Safe travels!`,
+          action: {
+            instructions: 'To approve, please click here::',
+            button: {
+              color: '#007bff',
+              text: 'Approve',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'approveBooking':
+      emailContent = {
+        body: {
+          name: data.passenger,
+          intro: `Good news! Your booking request has been successfully approved by the driver. 🚗✨ Thank you for choosing Rwanda Share Ride LTD for your ride.
+
+Here are the details of the approved trip:
+- Driver: ${data.driver}
+- Pickup Point: ${data.origin}
+- Destination: ${data.destination}
+- Travel Date: ${data.travelDate}
+
+Please ensure you and the driver coordinate any additional details for a smooth trip experience. Have a great journey!`,
+          outro: `Your driver will pick you up at ${data.travelDate}}. Please be ready for a smooth journey. Safe travels!`,
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: '',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+        },
+      };
+      break;
+    case 'declineBooking':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro: `Your booking request for the trip with ${data.driverName} has been declined.`,
+          outro: `We are sorry for the inconvenience. Please check other available trips.`,
+        },
+      };
+    case 'tripRequest':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro: `You a new ride request from ${data.fname} :
+      - Origin: ${data.origin}
+      - Destination: ${data.destination}
+      - Travel Date: ${data.travelDate}
+      - Seats Required: ${data.seatsRequired}
+      - Description: ${data.description}`,
+          action: {
+            instructions: 'To approve, please click here::',
+            button: {
+              color: '#007bff',
+              text: 'Approve',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'tripApproved':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro: `Great news! Your requested ride on RwandaRideShare has been approved. 🚗✨ You can now proceed with the journey and enjoy a comfortable ride.
+
+Here are the details:
+- Departure: ${data.origin}
+- Destination: ${data.destination}
+- Date and Time: ${data.travelDate}
+
+We hope you have a fantastic experience with RwandaRideShare. If you have any questions or need further assistance, feel free to reach out.`,
           action: {
             instructions:
               'To get started with RwandaRideShare, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'driverCreated':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro:
+            'Hello there! Thank you for creating a driver account with RwandaRideShare. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'passengerCreated':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro:
+            'Welcome to RwandaRideShare! You have successfully created a passenger account. Enjoy your journey with us!',
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'driverApproved':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro:
+            'Your driver account has been successfully approved! 🚗✨ You can now enjoy full access to our platform and start offering rides or find trips to join. Safe travels!',
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+    case 'CreatedReview':
+      emailContent = {
+        body: {
+          name: data.name,
+          intro: `You have a new review from ${data.reviewer}:
+      - Rating: ${data.rating}
+      - Comments: ${data.comment || 'No comments provided'}`,
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
+
+    default:
+      // Default template
+      emailContent = {
+        body: {
+          name: fname,
+          intro:
+            'Welcome to RwandaRideShare! We’re very excited to have you on board.',
+          action: {
+            instructions: 'To approve, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Approve',
               link: 'https://www.RwandaRideShare.com/',
             },
           },

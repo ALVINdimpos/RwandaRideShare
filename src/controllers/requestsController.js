@@ -1,9 +1,9 @@
 const { Requests, User, Role, Bookings, Trips } = require('../models');
 const { Op } = require('sequelize');
 const logger = require('../../loggerConfigs');
-
+const sendEmail = require('../helpers/sendEmail');
 const { createNotification } = require('../helpers/notifications');
-const { hashData } = require('../utils');
+const { hashData, decryptData } = require('../utils');
 // Create request
 const createRequest = async (req, res) => {
   try {
@@ -75,6 +75,7 @@ const createRequest = async (req, res) => {
       - Travel Date: ${TravelDate}
       - Seats Required: ${SeatsRequired}
       - Description: ${Description}`;
+    // find user
 
      // Notify only drivers about the new request
      for (const driverToNotify of drivers) {
@@ -83,6 +84,17 @@ const createRequest = async (req, res) => {
          notificationMessage,
          'Request'
        );
+       // Send email to the user
+       sendEmail('tripRequest', 'RwandaRideShare - New ride request', {
+         email: decryptData(driverToNotify.email),
+         fname: decryptData(user.fname),
+         lname: user.lname,
+         origin: Origin,
+         destination: Destination,
+         travelDate: TravelDate,
+         seatsRequired: SeatsRequired,
+         description: Description,
+       });
      }
     return res.status(201).json({
       ok: true,
@@ -172,13 +184,28 @@ const takeAndApproveRequest = async (req, res) => {
         },
       ],
     });
+
     if (!request) {
-      logger.error(`Taking and approving request: Request with ID ${requestId} not found`);
+      logger.error(
+        `Taking and approving request: Request with ID ${requestId} not found`
+      );
       return res.status(404).json({
         ok: false,
         message: 'Request not found.',
       });
     }
+
+    // Check if the request has already been approved by another driver
+    if (request.Status === 'Matched') {
+      logger.error(
+        'Taking and approving request: Request has already been taken by another driver'
+      );
+      return res.status(403).json({
+        ok: false,
+        message: 'Request has already been taken by another driver.',
+      });
+    }
+
     // Check if the driver has an available trip that matches the request
     const matchingTrip = await Trips.findOne({
       where: {
@@ -193,7 +220,9 @@ const takeAndApproveRequest = async (req, res) => {
     });
 
     if (!matchingTrip) {
-      logger.error('Taking and approving request: No matching trip found for the driver');
+      logger.error(
+        'Taking and approving request: No matching trip found for the driver'
+      );
       return res.status(403).json({
         ok: false,
         message: 'No matching trip found for the driver.',
@@ -221,9 +250,36 @@ const takeAndApproveRequest = async (req, res) => {
       }
     );
 
+    // Decrement the AvailableSeats in the corresponding trip
+    const updatedAvailableSeats = matchingTrip.AvailableSeats - request.SeatsRequired;
+    await Trips.update(
+      { AvailableSeats: updatedAvailableSeats },
+      {
+        where: {
+          id: matchingTrip.id,
+        },
+      }
+    );
+
+    // Send email to the passenger after driver approves the request
+    sendEmail('tripApproved', 'RwandaShareRIde - Trip Approved', {
+      email: decryptData(request.user.email),
+      fname: decryptData(request.user.fname),
+      lname: request.user.lname,
+      origin: request.Origin,
+      destination: request.Destination,
+      travelDate: request.TravelDate,
+      seatsRequired: request.SeatsRequired,
+      description: request.Description,
+    });
+
     // Notify the user that their request is approved
     const notificationMessage = `Your ride request from ${request.user.fname} ${request.user.lname} is approved.`;
-    await createNotification(request.user.id, notificationMessage, 'Request Approved');
+    await createNotification(
+      request.user.id,
+      notificationMessage,
+      'Request Approved'
+    );
 
     return res.status(200).json({
       ok: true,
@@ -237,6 +293,7 @@ const takeAndApproveRequest = async (req, res) => {
     });
   }
 };
+
 
 module.exports = {
   createRequest,

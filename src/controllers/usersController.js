@@ -2,6 +2,7 @@ const { Op } = require('sequelize');
 const { User, Role, ResetPasswordToken } = require('../models');
 const crypto = require('crypto');
 const logger = require('../../loggerConfigs');
+const { createNotification } = require('../helpers/notifications');
 const sendEmail = require('../helpers/sendEmail');
 
 const {
@@ -11,21 +12,14 @@ const {
   validatePassword,
   validateFields,
   hashPassword,
+  cleanUpFiles,
+  decryptData,
 } = require('../utils');
 
 // Add user
 const addUser = async (req, res) => {
   try {
-    const {
-      fname,
-      lname,
-      email,
-      roleId,
-      password,
-      phone,
-      isDriver,
-      driverLicense,
-    } = req.body;
+    const { fname, lname, email, roleId, password, phone } = req.body;
 
     const requiredFields = [
       'fname',
@@ -38,6 +32,7 @@ const addUser = async (req, res) => {
     const missingFields = validateFields(req, requiredFields);
 
     if (missingFields.length > 0) {
+      cleanUpFiles(req, 'images');
       logger.error(
         `Adding User: Required fields are missing: ${missingFields.join(', ')}`
       );
@@ -46,7 +41,15 @@ const addUser = async (req, res) => {
         message: `Required fields are missing: ${missingFields.join(', ')}`,
       });
     }
-
+    if (req.imageUploadError) {
+      logger.error(`Adding User: ${req.imageUploadError}`);
+      // Clean up uploaded images on error
+      cleanUpFiles(req, 'images');
+      return res.status(400).json({
+        ok: false,
+        message: req.imageUploadError,
+      });
+    }
     if (!validateEmail(email)) {
       logger.error(`Adding User: Invalid email: ${email}`);
       return res.status(400).json({
@@ -92,9 +95,11 @@ const addUser = async (req, res) => {
       email: encryptData(email),
       emailIndex,
       password: hashPassword(password),
-      isDriver,
-      driverLicense: isDriver ? driverLicense : null,
-      isVerified: false, 
+      Avatar: req.files['Avatar'] ? req.files['Avatar'][0].path : null,
+      DriverLicense: req.files['DriverLicense']
+        ? req.files['DriverLicense'][0].path
+        : null,
+      isVerified: false,
       isPasswordChanged: false,
       createdAt: new Date(),
     };
@@ -102,15 +107,34 @@ const addUser = async (req, res) => {
     const user = await User.create(encryptedUserData);
     await user.addRole(role);
 
-    sendEmail(
-      'SignUp',
-      'Welcome to RwandaRideShare - Set Up Your Profile Password',
-      {
-        email,
-        fname,
+    // Send role-specific notification
+    if (role.nameIndex === hashData('Driver')) {
+      createNotification(
+        user.id,
+        'Hello there! Thank you for creating a driver account with RwandaRideShare. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
+        'Account Created'
+      );
+      sendEmail('driverCreated', 'RwandaRideShare - Driver Account Created', {
+        email: decryptData(email),
+        fname: decryptData(fname),
         lname,
-      }
-    );
+      });
+    } else {
+      sendEmail(
+        'passengerCreated','RwandaRideShare - Passenger Account Created',
+        {
+          email: decryptData(email),
+          fname: decryptData(fname),
+          lname,
+        }
+      );
+
+      createNotification(
+        user.id,
+        'Welcome to RwandaRideShare! You have successfully created a passenger account. Enjoy your journey with us!',
+        'Account Created'
+      );
+    }
 
     return res.status(201).json({
       ok: true,
@@ -125,6 +149,7 @@ const addUser = async (req, res) => {
     });
   }
 };
+
 // Retrieve users
 const getUsers = async (req, res) => {
   try {
@@ -150,7 +175,6 @@ const getUsers = async (req, res) => {
     });
   }
 };
-
 
 // Get one user
 const getOneUser = async (req, res) => {
@@ -190,52 +214,65 @@ const getOneUser = async (req, res) => {
 // Update user
 const updateUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { fname, lname, roleId, status } = req.body;
+    const { userId } = req;
+    const { fname, lname, email, phone } = req.body;
 
-    // Check if the user exists
-    const user = await User.findByPk(id);
-    if (!user) {
-      logger.error(`Updating a user: User with ID ${id} not found`);
-      return res.status(404).json({
-        success: false,
-        message: 'User not found.',
+    // Validate if required fields are present
+    const requiredFields = ['fname', 'lname', 'email', 'phone'];
+    const missingFields = validateFields(req, requiredFields);
+
+    if (missingFields.length > 0) {
+      cleanUpFiles(req, 'images');
+      logger.error(
+        `Updating User: Required fields are missing: ${missingFields.join(
+          ', '
+        )}`
+      );
+      return res.status(400).json({
+        ok: false,
+        message: `Required fields are missing: ${missingFields.join(', ')}`,
       });
     }
 
-    // Update fields if provided
-    if (fname) user.fname = encryptData(fname);
-    if (lname) user.lname = encryptData(lname);
-    if (status) user.status = status;
+    // Check if the user exists
+    const user = await User.findOne(userId);
 
-    // Find and update the role
-    if (roleId) {
-      const role = await Role.findByPk(roleId);
-      if (!role) {
-        logger.error(`Updating a user: Role with ID ${id} not found`);
-        return res.status(404).json({
-          success: false,
-          message: 'Role not found',
-        });
-      }
+    if (!user) {
+      logger.error(`Updating User: User with ID ${userId} not found`);
+      return res.status(404).json({
+        ok: false,
+        message: 'User not found',
+      });
+    }
 
-      // Use the association methods to update the user's roles
-      await user.setRoles(role);
+    // Update user profile fields
+    user.fname = encryptData(fname);
+    user.lname = encryptData(lname);
+    user.email = encryptData(email);
+    user.phone = encryptData(phone);
+
+    // If Avatar and DriverLicense are provided in the request, update them
+    if (req.files['Avatar']) {
+      user.Avatar = req.files['Avatar'][0].path;
+    }
+
+    if (req.files['DriverLicense']) {
+      user.DriverLicense = req.files['DriverLicense'][0].path;
     }
 
     // Save changes to the user
     await user.save();
 
     return res.status(200).json({
-      success: true,
-      message: 'User successfully updated',
+      ok: true,
+      message: 'User profile successfully updated',
       data: user,
     });
   } catch (error) {
-    logger.error(`Updating user: ${error.message}`);
+    logger.error(`Updating a user: ${error.message}`);
     return res.status(500).json({
-      success: false,
-      message: 'An error occurred while updating the user.',
+      ok: false,
+      message: 'An error occurred while updating the user profile.',
     });
   }
 };
@@ -311,16 +348,12 @@ const forgotPassword = async (req, res) => {
       expiresAt: new Date(Date.now() + 3600000),
     });
 
-    sendEmail(
-      'ResetPassword',
-      'RwandaRideShare - Reset Your Password',
-      {
-        email,
-        fname: user.fname,
-        lname: user.lname,
-        token,
-      }
-    );
+    sendEmail('ResetPassword', 'RwandaRideShare - Reset Your Password', {
+      email : decryptData(user.email),
+      fname: decryptData(user.fname),
+      lname: user.lname,
+      token,
+    });
 
     return res.status(200).json({
       ok: true,
@@ -334,7 +367,7 @@ const forgotPassword = async (req, res) => {
       message: 'An error occurred while sending the password reset token.',
     });
   }
-}
+};
 // resetPassword
 
 const resetPassword = async (req, res) => {
@@ -354,7 +387,7 @@ const resetPassword = async (req, res) => {
       include: [
         {
           model: User,
-          as: 'user', 
+          as: 'user',
         },
       ],
     });
@@ -389,6 +422,60 @@ const resetPassword = async (req, res) => {
   }
 };
 
+const approveUserIfIsDriver = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = await User.findByPk(id);
+    const updateResult = await User.update(
+      { IsVerified: true },
+      {
+        where: {
+          id,
+        },
+      }
+    );
+    if (updateResult) {
+      // Log success
+      logger.info(`User with ID ${id} approved successfully`);
+      // Send email to the user
+      sendEmail('driverApproved', 'RwandaRideShare - Driver Account Approved', {
+        email: decryptData(user.email),
+        fname: decryptData(user.fname),
+        lname: user.lname,
+      });
+      // Send notification to the user
+      createNotification(
+        user.id,
+        'Hello there! Your driver account has been successfully approved! 🚗✨ You can now enjoy full access to our platform and start offering rides or find trips to join. Safe travels!',
+        'Account Approved'
+      );
+
+      return res.status(200).json({
+        ok: true,
+        message: 'User approved successfully',
+        data: user,
+      });
+    } else {
+      // Log failure
+      logger.error(`User approval failed. User with ID ${id} not found`);
+
+      return res.status(404).json({
+        ok: false,
+        message: 'User not found',
+      });
+    }
+  } catch (error) {
+    // Log error
+    logger.error(`Error approving user: ${error.message}`);
+
+    return res.status(500).json({
+      ok: false,
+      message: error.message,
+    });
+  }
+};
+
 module.exports = {
   addUser,
   getUsers,
@@ -397,4 +484,5 @@ module.exports = {
   deleteUser,
   forgotPassword,
   resetPassword,
+  approveUserIfIsDriver,
 };

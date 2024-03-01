@@ -57,6 +57,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
+      Car: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       CarMake: {
         type: DataTypes.STRING,
         allowNull: false,

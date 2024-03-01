@@ -22,7 +22,7 @@ const isAdmin = (req, res, next) => {
       });
     }
 
-    const token = authHeader.split(' ')[1];
+    const token = authHeader;
 
     jwt.verify(
       token,

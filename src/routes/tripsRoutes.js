@@ -10,15 +10,20 @@ const {
   getTripsByDriver,
 } = require('../controllers/tripsController');
 const { isDriver } = require('../middleware');
+const { isValidUpload } = require('../middleware');
 
 const router = express.Router();
 
+const fields = [
+  { name: 'Car', maxCount: 1 },
+];
+
 // Trips routes
-router.get('/driver', isDriver, getTripsByDriver);
-router.post('/', isDriver, addTrip);
+router.get('/driver', isValidUpload(fields), isDriver, getTripsByDriver);
+router.post('/', isValidUpload(fields), isDriver, addTrip);
 router.get('/', getTrips);
 router.get('/:id', getOneTrip);
-router.put('/:id', isDriver, updateTrip);
+router.patch('/:id', isValidUpload(fields), isDriver, updateTrip);
 router.delete('/:id', deleteTrip);
 router.post('/search', searchTrips);
 

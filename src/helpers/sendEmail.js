@@ -28,6 +28,36 @@ const sendEmail = async (type, subject, data) => {
         break;
       case 'Subscription':
         returnMessage = `A subscription email has been sent to ${data.email}.`;
+      case 'ContactUs':
+        returnMessage = `An email has been sent to ${data.email}.`;
+        break;
+      case 'TripRequest':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'tripApproved':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'driverCreated':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'driverApproved':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'passengerCreated':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'declineBooking':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'tripBooked':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'approveBooking':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
+      case 'CreatedReview':
+        returnMessage = `A trip request email has been sent to ${data.email}.`;
+        break;
       default:
         returnMessage = `An email has been sent to ${data.email}.`;
     }

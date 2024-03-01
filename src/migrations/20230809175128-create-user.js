@@ -33,10 +33,9 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      IsDriver: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
+      Avatar: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       IsVerified: {
         type: Sequelize.BOOLEAN,

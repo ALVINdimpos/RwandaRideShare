@@ -1,7 +1,8 @@
 const { Bookings, Trips, User } = require('../models');
 const { createNotification } = require('../helpers/notifications');
 const logger = require('../../loggerConfigs');
-
+const sendEmail = require('../helpers/sendEmail');
+const { decryptData } = require('../utils');
 // Create booking
 const createBooking = async (req, res) => {
   try {
@@ -53,6 +54,17 @@ const createBooking = async (req, res) => {
 
     // Retrieve the owner (Driver) of the trip
     const driverId = trip.DriverID; 
+  
+    // send email to the driver
+    const driver = await User.findByPk(driverId);
+    sendEmail('tripBooked', 'RwandaShareRIde - Trip Booked', {
+      email: decryptData(driver.email),
+      driver: `${decryptData(driver.fname)}`,
+      passenger: `${decryptData(passenger.fname)} ${decryptData(passenger.lname)}`,
+      origin: trip.Origin,
+      destination: trip.Destination,
+      travelDate: trip.DepartureDate,
+    });
 
     // Create a notification for the trip owner
     await createNotification(
@@ -266,27 +278,27 @@ const getDriverBookings = async (req, res) => {
 const processBookingRequest = async (req, res) => {
   try {
     const { bookingId } = req.query;
-    const { action } = req.body; 
-    
+    const { action } = req.body;
+
     // Find the booking by ID
-     const booking = await Bookings.findByPk(bookingId, {
-       include: [
-         {
-           model: Trips,
-           include: [
-             {
-               model: User,
-               as: 'driver',
-             },
-           ],
-           as: 'trip', 
-         },
-         {
-           model: User,
-           as: 'passenger',
-         },
-       ],
-     });
+    const booking = await Bookings.findByPk(bookingId, {
+      include: [
+        {
+          model: Trips,
+          include: [
+            {
+              model: User,
+              as: 'driver',
+            },
+          ],
+          as: 'trip',
+        },
+        {
+          model: User,
+          as: 'passenger',
+        },
+      ],
+    });
 
     if (!booking) {
       logger.error(`Processing booking request: Booking with ID ${bookingId} not found`);
@@ -301,6 +313,22 @@ const processBookingRequest = async (req, res) => {
       // Update booking status to 'Approved'
       await booking.update({ BookingStatus: 'Approved' });
 
+      // Update available seats in the trip
+      const updatedAvailableSeats = booking.trip.AvailableSeats - 1;
+      await booking.trip.update({ AvailableSeats: updatedAvailableSeats });
+      // send email to the passenger
+      sendEmail('approveBooking', 'RwandaShareRIde - Trip Approved', {
+        email: decryptData(booking.passenger.email),
+        driver: `${decryptData(booking.trip.driver.fname)} ${decryptData(
+          booking.trip.driver.lname
+        )}`,
+        passenger: `${decryptData(booking.passenger.fname)} ${decryptData(
+          booking.passenger.lname
+        )}`,
+        origin: booking.trip.Origin,
+        destination: booking.trip.Destination,
+        travelDate: booking.trip.DepartureDate,
+      });
       // Notify passenger about the approval
       const notificationMessage = `Great news! Your booking request for the trip with ${booking.trip.driver.fname} ${booking.trip.driver.lname} has been approved. Your driver will pick you up at ${booking.trip.DepartureDate}. Please be ready for a smooth journey. Safe travels!`;
 
@@ -326,7 +354,8 @@ const processBookingRequest = async (req, res) => {
         message: 'Invalid action. Use "approve" or "decline".',
       });
     }
-   logger.info(`Booking ${action === 'approve' ? 'approved' : 'declined'} successfully`);
+
+    logger.info(`Booking ${action === 'approve' ? 'approved' : 'declined'} successfully`);
     return res.status(200).json({
       ok: true,
       message: `Booking ${action === 'approve' ? 'approved' : 'declined'} successfully.`,
@@ -340,6 +369,7 @@ const processBookingRequest = async (req, res) => {
     });
   }
 };
+
 
 module.exports = {
   createBooking,

@@ -1,14 +1,11 @@
-const { Op } = require('sequelize');
 const { Trips, User } = require('../models');
 const logger = require('../../loggerConfigs');
-const {
-  validateFields,
-} = require('../utils');
+const { validateFields, cleanUpFiles } = require('../utils');
 
 // Add trip
 const addTrip = async (req, res) => {
-    const { userId } = req;
-    const DriverID  = userId;
+  const { userId } = req;
+  const DriverID = userId;
   try {
     // Extract trip details from the request body
     const {
@@ -45,6 +42,7 @@ const addTrip = async (req, res) => {
     const missingFields = validateFields(req, requiredFields);
 
     if (missingFields.length > 0) {
+      cleanUpFiles(req, 'images');
       logger.error(
         `Adding Trip: Required fields are missing: ${missingFields.join(', ')}`
       );
@@ -53,7 +51,15 @@ const addTrip = async (req, res) => {
         message: `Required fields are missing: ${missingFields.join(', ')}`,
       });
     }
-
+    if (req.imageUploadError) {
+      logger.error(`Adding Trip: ${req.imageUploadError}`);
+      // Clean up uploaded images on error
+      cleanUpFiles(req, 'images');
+      return res.status(400).json({
+        ok: false,
+        message: req.imageUploadError,
+      });
+    }
     // Check if the driver (User) exists
     const driver = await User.findByPk(DriverID);
     if (!driver) {
@@ -73,6 +79,7 @@ const addTrip = async (req, res) => {
       DepartureTime,
       AvailableSeats,
       PricePerSeat,
+      Car: req.files['Car'] ? req.files['Car'][0].path : null,
       CarMake,
       CarModel,
       CarYear,
@@ -123,7 +130,7 @@ const getTrips = async (req, res) => {
   }
 };
 const getTripsByDriver = async (req, res) => {
-  const {userId} = req;
+  const { userId } = req;
   try {
     // Fetch all trips
     const trips = await Trips.findAll({
@@ -138,7 +145,7 @@ const getTripsByDriver = async (req, res) => {
       },
       order: [['createdAt', 'DESC']],
     });
-   logger.info('Trips retrieved successfully');
+    logger.info('Trips retrieved successfully');
     return res.status(200).json({
       ok: true,
       data: trips,
@@ -190,8 +197,8 @@ const getOneTrip = async (req, res) => {
 // Update trip
 const updateTrip = async (req, res) => {
   try {
-    const { id } = req.params;
-    // Extract fields to update from the request body
+    const { tripId } = req.params;
+    // Extract trip details from the request body
     const {
       Origin,
       Destination,
@@ -206,52 +213,89 @@ const updateTrip = async (req, res) => {
       Stops,
       LuggageSize,
       TripDescription,
-      TripStatus,
     } = req.body;
 
-    // Find the trip by ID
-    const trip = await Trips.findByPk(id);
-    if (!trip) {
-      logger.error(`Updating a trip: Trip with ID ${id} not found`);
-      return res.status(404).json({
-        success: false,
-        message: 'Trip not found.',
+    // Validate if required fields are present
+    const requiredFields = [
+      'Origin',
+      'Destination',
+      'DepartureDate',
+      'DepartureTime',
+      'AvailableSeats',
+      'PricePerSeat',
+      'CarMake',
+      'CarModel',
+      'CarYear',
+      'CarColor',
+      'LuggageSize',
+      'TripDescription',
+    ];
+    const missingFields = validateFields(req, requiredFields);
+
+    if (missingFields.length > 0) {
+      cleanUpFiles(req, 'images');
+      logger.error(
+        `Updating Trip: Required fields are missing: ${missingFields.join(
+          ', '
+        )}`
+      );
+      return res.status(400).json({
+        ok: false,
+        message: `Required fields are missing: ${missingFields.join(', ')}`,
       });
     }
 
-    // Update fields if provided
-    if (Origin) trip.Origin = Origin;
-    if (Destination) trip.Destination = Destination;
-    if (DepartureDate) trip.DepartureDate = DepartureDate;
-    if (DepartureTime) trip.DepartureTime = DepartureTime;
-    if (AvailableSeats) trip.AvailableSeats = AvailableSeats;
-    if (PricePerSeat) trip.PricePerSeat = PricePerSeat;
-    if (CarMake) trip.CarMake = CarMake;
-    if (CarModel) trip.CarModel = CarModel;
-    if (CarYear) trip.CarYear = CarYear;
-    if (CarColor) trip.CarColor = CarColor;
-    if (Stops) trip.Stops = Stops;
-    if (LuggageSize) trip.LuggageSize = LuggageSize;
-    if (TripDescription) trip.TripDescription = TripDescription;
-    if (TripStatus) trip.TripStatus = TripStatus;
+    if (req.imageUploadError) {
+      logger.error(`Adding Trip: ${req.imageUploadError}`);
+      // Clean up uploaded images on error
+      cleanUpFiles(req, 'images');
+      return res.status(400).json({
+        ok: false,
+        message: req.imageUploadError,
+      });
+    }
+    // Check if the trip exists
+    const existingTrip = await Trips.findOne(tripId);
 
-    // Save changes to the trip
-    await trip.save();
+    if (!existingTrip) {
+      logger.error(`Updating Trip: Trip with ID ${tripId} not found`);
+      return res.status(404).json({
+        ok: false,
+        message: 'Trip not found',
+      });
+    }
 
+    // Update the trip details
+    await existingTrip.update({
+      Origin,
+      Destination,
+      DepartureDate,
+      DepartureTime,
+      AvailableSeats,
+      PricePerSeat,
+      Car: req.files['Car'] ? req.files['Car'][0].path : existingTrip.Car,
+      CarMake,
+      CarModel,
+      CarYear,
+      CarColor,
+      Stops,
+      LuggageSize,
+      TripDescription,
+    });
+    logger.info('Trip successfully updated');
     return res.status(200).json({
-      success: true,
+      ok: true,
       message: 'Trip successfully updated',
-      data: trip,
+      data: existingTrip,
     });
   } catch (error) {
-    logger.error(`Updating trip: ${error.message}`);
+    logger.error(`Updating a trip: ${error.message}`);
     return res.status(500).json({
-      success: false,
-      message: 'An error occurred while updating the trip.',
+      ok: false,
+      message: 'An error occurred while updating the trip',
     });
   }
 };
-
 // Delete trip
 const deleteTrip = async (req, res) => {
   const { id } = req.params;
@@ -307,7 +351,7 @@ const searchTrips = async (req, res) => {
           as: 'driver',
         },
       ],
-      where: searchConditions, 
+      where: searchConditions,
       order: [['createdAt', 'DESC']],
     });
 
@@ -330,8 +374,6 @@ const searchTrips = async (req, res) => {
     });
   }
 };
-
-
 
 module.exports = {
   addTrip,

@@ -35,6 +35,10 @@ module.exports = {
       PricePerSeat: {
         type: Sequelize.FLOAT,
       },
+      Car: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       CarMake: {
         type: Sequelize.STRING,
       },

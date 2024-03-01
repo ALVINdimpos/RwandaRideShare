@@ -62,17 +62,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      IsDriver: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-      },
       IsVerified: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
       },
       DriverLicense: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      Avatar: {
         type: DataTypes.STRING,
         allowNull: true,
       },
