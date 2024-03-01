@@ -1,0 +1,7 @@
+docs/*
+coverage/*
+.idea/*
+.code/*
+node_modules/*
+
+
