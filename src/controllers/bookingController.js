@@ -130,7 +130,15 @@ const getOneBooking = async (req, res) => {
 
   try {
     // Fetch a single booking by ID
-    const booking = await Bookings.findByPk(id);
+ const booking = await Bookings.findByPk(id, {
+   include: [
+     {
+       model: User,
+       as: 'passenger',
+     },
+   ],
+ });
+
 
     if (!booking) {
       logger.error(`Fetching a booking: Booking with ID ${id} not found`);
@@ -257,27 +265,28 @@ const getDriverBookings = async (req, res) => {
 // Accept or decline a booking request
 const processBookingRequest = async (req, res) => {
   try {
-    const { bookingId } = req.params;
+    const { bookingId } = req.query;
     const { action } = req.body; 
     
     // Find the booking by ID
-    const booking = await Bookings.findByPk(bookingId, {
-      include: [
-        {
-          model: Trips,
-          include: [
-            {
-              model: User,
-              as: 'driver',
-            },
-          ],
-        },
-        {
-          model: User,
-          as: 'passenger',
-        },
-      ],
-    });
+     const booking = await Bookings.findByPk(bookingId, {
+       include: [
+         {
+           model: Trips,
+           include: [
+             {
+               model: User,
+               as: 'driver',
+             },
+           ],
+           as: 'trip', 
+         },
+         {
+           model: User,
+           as: 'passenger',
+         },
+       ],
+     });
 
     if (!booking) {
       logger.error(`Processing booking request: Booking with ID ${bookingId} not found`);
@@ -290,17 +299,19 @@ const processBookingRequest = async (req, res) => {
     // Perform the requested action (approve or decline)
     if (action === 'approve') {
       // Update booking status to 'Approved'
-      await booking.update({ Status: 'Approved' });
+      await booking.update({ BookingStatus: 'Approved' });
 
       // Notify passenger about the approval
+      const notificationMessage = `Great news! Your booking request for the trip with ${booking.trip.driver.fname} ${booking.trip.driver.lname} has been approved. Your driver will pick you up at ${booking.trip.DepartureDate}. Please be ready for a smooth journey. Safe travels!`;
+
       await createNotification(
         booking.PassengerID,
-        `Your booking request for trip with ${booking.trip.driver.fname} ${booking.trip.driver.lname} has been approved.`,
+        notificationMessage,
         'Booking'
       );
     } else if (action === 'decline') {
       // Update booking status to 'Declined'
-      await booking.update({ Status: 'Declined' });
+      await booking.update({ BookingStatus: 'Declined' });
 
       // Notify passenger about the decline
       await createNotification(

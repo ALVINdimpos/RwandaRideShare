@@ -1,6 +1,9 @@
-const { Requests, User, Role } = require('../models');
+const { Requests, User, Role, Bookings, Trips } = require('../models');
+const { Op } = require('sequelize');
 const logger = require('../../loggerConfigs');
+
 const { createNotification } = require('../helpers/notifications');
+const { hashData } = require('../utils');
 // Create request
 const createRequest = async (req, res) => {
   try {
@@ -60,22 +63,31 @@ const createRequest = async (req, res) => {
       ],
       order: [['createdAt', 'DESC']],
     });
+    const hashRole = hashData('Driver');
+    // Filter users with the 'Driver' role
+    const drivers = allDrivers.filter(user =>
+      user.roles.some(role => role.nameIndex === hashRole)
+    );
+    
+     const notificationMessage = `New ride request from ${user.fname} ${user.lname}:
+      - Origin: ${Origin}
+      - Destination: ${Destination}
+      - Travel Date: ${TravelDate}
+      - Seats Required: ${SeatsRequired}
+      - Description: ${Description}`;
 
-
-    const notificationMessage = `New ride request from ${user.fname} ${user.lname}.`;
-
-    for (const driverToNotify of allDrivers) {
-      await createNotification(
-        driverToNotify.id,
-        notificationMessage,
-        'Request'
-      );
-    }
-
+     // Notify only drivers about the new request
+     for (const driverToNotify of drivers) {
+       await createNotification(
+         driverToNotify.id,
+         notificationMessage,
+         'Request'
+       );
+     }
     return res.status(201).json({
       ok: true,
       message: 'Request successfully created',
-      data: allDrivers,
+      data: request,
     });
   } catch (error) {
     logger.error(`Creating request: ${error.message}`);
@@ -145,64 +157,83 @@ const getOneRequest = async (req, res) => {
     });
   }
 };
-
-// Update request status
-const updateRequestStatus = async (req, res) => {
+// Take and approve a request
+const takeAndApproveRequest = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { Status } = req.body;
+    const { userId } = req;
+    const { requestId } = req.params;
 
-    const request = await Requests.findByPk(id);
+    // Check if the request exists
+    const request = await Requests.findByPk(requestId, {
+      include: [
+        {
+          model: User,
+          as: 'user',
+        },
+      ],
+    });
     if (!request) {
-      logger.error(`Updating a request: Request with ID ${id} not found`);
+      logger.error(`Taking and approving request: Request with ID ${requestId} not found`);
       return res.status(404).json({
-        success: false,
+        ok: false,
         message: 'Request not found.',
       });
     }
-
-    if (Status) request.Status = Status;
-
-    await request.save();
-
-    return res.status(200).json({
-      success: true,
-      message: 'Request status successfully updated',
-      data: request,
+    // Check if the driver has an available trip that matches the request
+    const matchingTrip = await Trips.findOne({
+      where: {
+        DriverID: userId,
+        Origin: request.Origin,
+        Destination: request.Destination,
+        DepartureDate: request.TravelDate,
+        AvailableSeats: {
+          [Op.gte]: request.SeatsRequired,
+        },
+      },
     });
-  } catch (error) {
-    logger.error(`Updating request status: ${error.message}`);
-    return res.status(500).json({
-      success: false,
-      message: 'An error occurred while updating the request status.',
-    });
-  }
-};
 
-// Delete request
-const deleteRequest = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const request = await Requests.findByPk(id);
-    if (!request) {
-      logger.error(`Deleting a request: Request with ID ${id} not found`);
-      return res.status(404).json({
+    if (!matchingTrip) {
+      logger.error('Taking and approving request: No matching trip found for the driver');
+      return res.status(403).json({
         ok: false,
-        message: 'Request not found',
+        message: 'No matching trip found for the driver.',
       });
     }
 
-    await request.destroy();
+    // Update the booking status as approved
+    await Bookings.update(
+      { BookingStatus: 'Approved' },
+      {
+        where: {
+          TripID: matchingTrip.id,
+          PassengerID: request.UserID,
+        },
+      }
+    );
+
+    // Update the request status as approved
+    await Requests.update(
+      { Status: 'Matched' },
+      {
+        where: {
+          id: request.id,
+        },
+      }
+    );
+
+    // Notify the user that their request is approved
+    const notificationMessage = `Your ride request from ${request.user.fname} ${request.user.lname} is approved.`;
+    await createNotification(request.user.id, notificationMessage, 'Request Approved');
+
     return res.status(200).json({
       ok: true,
-      message: 'Request deleted successfully',
+      message: 'Request successfully taken and approved.',
     });
   } catch (error) {
-    logger.error(`Deleting a request: ${error.message}`);
+    logger.error(`Taking and approving request: ${error.message}`);
     return res.status(500).json({
       ok: false,
-      error: error.message,
+      message: 'An error occurred while taking and approving the request.',
     });
   }
 };
@@ -211,6 +242,5 @@ module.exports = {
   createRequest,
   getAllRequests,
   getOneRequest,
-  updateRequestStatus,
-  deleteRequest,
+  takeAndApproveRequest,
 };

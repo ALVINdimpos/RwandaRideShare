@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Bookings extends Model {
     /**
@@ -17,51 +15,55 @@ module.exports = (sequelize, DataTypes) => {
       });
       Bookings.belongsTo(models.User, {
         foreignKey: 'PassengerID',
+        targetKey: 'id',
         as: 'passenger',
       });
     }
   }
-  Bookings.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true,
-    },
-    TripID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Trips',
-        key: 'id',
+  Bookings.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        autoIncrement: true,
+      },
+      TripID: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Trips',
+          key: 'id',
+        },
+      },
+      PassengerID: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
+      },
+      BookingStatus: {
+        type: DataTypes.ENUM('Pending', 'Approved', 'Declined'),
+        allowNull: false,
+        defaultValue: 'Pending',
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
       },
     },
-    PassengerID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Users',
-        key: 'id',
-      },
-    },
-    BookingStatus: {
-      type: DataTypes.ENUM('Pending', 'Approved', 'Declined'),
-      allowNull: false,
-      defaultValue: 'Pending',
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
-    },
-  }, {
-    sequelize,
-    modelName: 'Bookings',
-  });
+    {
+      sequelize,
+      modelName: 'Bookings',
+    }
+  );
   return Bookings;
 };

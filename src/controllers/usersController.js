@@ -1,5 +1,6 @@
 const { Op } = require('sequelize');
-const { User, Role, UserTag } = require('../models');
+const { User, Role, ResetPasswordToken } = require('../models');
+const crypto = require('crypto');
 const logger = require('../../loggerConfigs');
 const sendEmail = require('../helpers/sendEmail');
 
@@ -150,31 +151,6 @@ const getUsers = async (req, res) => {
   }
 };
 
-// Get archived users
-const getArchivedUsers = async (req, res) => {
-  try {
-    const archivedUsers = await User.findAll({
-      include: {
-        model: Role,
-        as: 'roles',
-      },
-      paranoid: false,
-      where: {
-        deletedAt: { [Op.not]: null },
-      },
-    });
-    return res.status(200).json({
-      ok: true,
-      data: archivedUsers,
-    });
-  } catch (error) {
-    logger.error(`Retrieving archived users: ${error.message}`);
-    return res.status(500).json({
-      ok: false,
-      message: error.message,
-    });
-  }
-};
 
 // Get one user
 const getOneUser = async (req, res) => {
@@ -186,10 +162,6 @@ const getOneUser = async (req, res) => {
         {
           model: Role,
           as: 'roles',
-        },
-        {
-          model: UserTag,
-          as: 'tags',
         },
       ],
     });
@@ -308,12 +280,121 @@ const deleteUser = async (req, res) => {
     });
   }
 };
+// forgotPassword
+
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!validateEmail(email)) {
+      logger.error(`Forgot Password: Invalid email: ${email}`);
+      return res.status(400).json({
+        ok: false,
+        message: 'Invalid email format',
+      });
+    }
+
+    const emailIndex = hashData(email);
+    const user = await User.findOne({ where: { emailIndex } });
+    if (!user) {
+      logger.error(`Forgot Password: User with email: ${email} not found`);
+      return res.status(404).json({
+        ok: false,
+        message: `User with email: ${email} not found.`,
+      });
+    }
+
+    const token = crypto.randomBytes(40).toString('hex');
+    const resetPasswordToken = await ResetPasswordToken.create({
+      UserId: user.id,
+      token,
+      expiresAt: new Date(Date.now() + 3600000),
+    });
+
+    sendEmail(
+      'ResetPassword',
+      'RwandaRideShare - Reset Your Password',
+      {
+        email,
+        fname: user.fname,
+        lname: user.lname,
+        token,
+      }
+    );
+
+    return res.status(200).json({
+      ok: true,
+      message: 'Password reset token sent successfully',
+      data: resetPasswordToken,
+    });
+  } catch (error) {
+    logger.error(`Forgot Password: ${error.message}`);
+    return res.status(500).json({
+      ok: false,
+      message: 'An error occurred while sending the password reset token.',
+    });
+  }
+}
+// resetPassword
+
+const resetPassword = async (req, res) => {
+  try {
+    const { token } = req.query;
+    const { password } = req.body;
+
+    // Validate email and password...
+
+    const resetPasswordToken = await ResetPasswordToken.findOne({
+      where: {
+        token,
+        expiresAt: {
+          [Op.gt]: new Date(),
+        },
+      },
+      include: [
+        {
+          model: User,
+          as: 'user', 
+        },
+      ],
+    });
+
+    if (!resetPasswordToken) {
+      logger.error(`Reset Password: Invalid or expired token`);
+      return res.status(400).json({
+        ok: false,
+        message: 'Invalid or expired token',
+      });
+    }
+
+    // Now you can access the associated user
+    const user = resetPasswordToken.user;
+
+    // Update the user's password and save
+    user.password = hashPassword(password);
+    await user.save();
+    await resetPasswordToken.destroy();
+
+    logger.info('Password reset successfully');
+    return res.status(200).json({
+      ok: true,
+      message: 'Password reset successfully',
+    });
+  } catch (error) {
+    logger.error(`Reset Password: ${error.message}`);
+    return res.status(500).json({
+      ok: false,
+      message: 'An error occurred while resetting the password.',
+    });
+  }
+};
 
 module.exports = {
   addUser,
   getUsers,
-  getArchivedUsers,
   getOneUser,
   updateUser,
   deleteUser,
+  forgotPassword,
+  resetPassword,
 };

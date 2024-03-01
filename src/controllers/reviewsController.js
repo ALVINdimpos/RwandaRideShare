@@ -53,9 +53,15 @@ const createReview = async (req, res) => {
       Rating,
       Comment,
     });
-  
+
     // create notification
-    await createNotification(ReviewedUserID, `You have a new review from ${reviewer.fname} ${reviewer.lname}`, 'Review');
+    await createNotification(
+      ReviewedUserID,
+      `You have a new review from ${reviewer.fname} ${reviewer.lname}:
+    - Rating: ${review.rating}
+    - Comments: ${review.comments || 'No comments provided'}`,
+      'Review'
+    );
 
     logger.info('Review successfully created');
     logger.info('Notification created successfully');

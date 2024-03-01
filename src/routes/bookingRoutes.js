@@ -17,7 +17,7 @@ const router = express.Router();
 
 // Drivers routes 
 router.get('/driver', isDriver, getDriverBookings);
-router.put('/driver/:id', isDriver, processBookingRequest);
+router.put('/driver/', isDriver, processBookingRequest);
 // Bookings routes
 router.post('/',isPassenger, createBooking);
 router.get('/', isPassenger, getAllBookingsForTrip);

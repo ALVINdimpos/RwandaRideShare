@@ -122,7 +122,35 @@ const getTrips = async (req, res) => {
     });
   }
 };
-
+const getTripsByDriver = async (req, res) => {
+  const {userId} = req;
+  try {
+    // Fetch all trips
+    const trips = await Trips.findAll({
+      include: [
+        {
+          model: User,
+          as: 'driver',
+        },
+      ],
+      where: {
+        DriverID: userId,
+      },
+      order: [['createdAt', 'DESC']],
+    });
+   logger.info('Trips retrieved successfully');
+    return res.status(200).json({
+      ok: true,
+      data: trips,
+    });
+  } catch (error) {
+    logger.error(`Retrieving trips: ${error.message}`);
+    return res.status(500).json({
+      ok: false,
+      message: error.message,
+    });
+  }
+};
 // Get one trip
 const getOneTrip = async (req, res) => {
   const { id } = req.params;
@@ -312,4 +340,5 @@ module.exports = {
   updateTrip,
   deleteTrip,
   searchTrips,
+  getTripsByDriver,
 };

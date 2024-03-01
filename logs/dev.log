@@ -1619,3 +1619,878 @@
 2024-02-28 17:35:30 info: DB connected successfully
 2024-02-28 17:35:32 info: Server listening on port : 8080
 2024-02-28 17:35:32 info: DB connected successfully
+2024-03-01 11:14:42 info: Server listening on port : 8080
+2024-03-01 11:14:42 info: DB connected successfully
+2024-03-01 11:22:49 error: JWT verification error: jwt expired
+2024-03-01 11:31:44 info: Notification created successfully
+2024-03-01 11:31:44 info: Booking successfully created
+2024-03-01 11:31:49 error: JWT verification error: jwt expired
+2024-03-01 11:31:58 error: Fetching a booking: Unknown column 'UserId' in 'field list'
+2024-03-01 11:43:01 info: Server listening on port : 8080
+2024-03-01 11:43:01 info: DB connected successfully
+2024-03-01 11:43:11 error: Fetching a booking: Unknown column 'Bookings.UserId' in 'field list'
+2024-03-01 11:43:12 error: Fetching a booking: Unknown column 'Bookings.UserId' in 'field list'
+2024-03-01 11:46:27 info: Server listening on port : 8080
+2024-03-01 11:46:27 info: DB connected successfully
+2024-03-01 11:46:30 error: Fetching a booking: Unknown column 'Bookings.UserId' in 'field list'
+2024-03-01 11:47:40 info: Server listening on port : 8080
+2024-03-01 11:47:40 info: DB connected successfully
+2024-03-01 11:48:07 info: Server listening on port : 8080
+2024-03-01 11:48:07 info: DB connected successfully
+2024-03-01 11:48:15 info: Server listening on port : 8080
+2024-03-01 11:48:15 info: DB connected successfully
+2024-03-01 11:48:18 info: Server listening on port : 8080
+2024-03-01 11:48:18 info: DB connected successfully
+2024-03-01 11:48:23 error: Fetching a booking: Unknown column 'Bookings.UserId' in 'field list'
+2024-03-01 11:49:06 info: Server listening on port : 8080
+2024-03-01 11:49:06 info: DB connected successfully
+2024-03-01 11:49:09 info: Server listening on port : 8080
+2024-03-01 11:49:09 info: DB connected successfully
+2024-03-01 11:49:26 info: Server listening on port : 8080
+2024-03-01 11:49:26 info: DB connected successfully
+2024-03-01 11:49:31 info: Server listening on port : 8080
+2024-03-01 11:49:31 info: DB connected successfully
+2024-03-01 11:49:35 info: Server listening on port : 8080
+2024-03-01 11:49:35 info: DB connected successfully
+2024-03-01 11:50:07 error: JWT verification error: jwt expired
+2024-03-01 11:52:27 warn: Access denied: User does not have Driver role.
+2024-03-01 11:53:23 info: Driver bookings retrieved successfully
+2024-03-01 12:06:08 warn: Access denied: User does not have Passenger role.
+2024-03-01 12:07:04 info: Server listening on port : 8080
+2024-03-01 12:07:04 info: DB connected successfully
+2024-03-01 12:07:05 info: Server listening on port : 8080
+2024-03-01 12:07:05 info: DB connected successfully
+2024-03-01 12:07:21 info: Server listening on port : 8080
+2024-03-01 12:07:21 info: DB connected successfully
+2024-03-01 12:07:24 error: Processing booking request: Trips is associated to Bookings using an alias. You must use the 'as' keyword to specify the alias within your include statement.
+2024-03-01 12:12:26 info: Server listening on port : 8080
+2024-03-01 12:12:26 info: DB connected successfully
+2024-03-01 12:12:32 error: Processing booking request: Invalid action: Approved
+2024-03-01 12:13:15 info: Notification created successfully
+2024-03-01 12:13:15 info: Booking approved successfully
+2024-03-01 12:14:40 info: Server listening on port : 8080
+2024-03-01 12:14:40 info: DB connected successfully
+2024-03-01 12:14:44 info: Server listening on port : 8080
+2024-03-01 12:14:44 info: DB connected successfully
+2024-03-01 12:14:58 info: Notification created successfully
+2024-03-01 12:14:58 info: Booking approved successfully
+2024-03-01 12:15:55 info: Server listening on port : 8080
+2024-03-01 12:15:55 info: DB connected successfully
+2024-03-01 12:16:15 info: Server listening on port : 8080
+2024-03-01 12:16:15 info: DB connected successfully
+2024-03-01 12:16:18 info: Server listening on port : 8080
+2024-03-01 12:16:18 info: DB connected successfully
+2024-03-01 12:17:07 info: Notification created successfully
+2024-03-01 12:17:07 info: Booking successfully created
+2024-03-01 12:17:15 info: Driver bookings retrieved successfully
+2024-03-01 12:17:17 info: Notification created successfully
+2024-03-01 12:17:17 info: Booking approved successfully
+2024-03-01 12:17:38 error: JWT verification error: jwt expired
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:18 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:18:47 info: Notification created successfully
+2024-03-01 12:19:13 info: Server listening on port : 8080
+2024-03-01 12:19:13 info: DB connected successfully
+2024-03-01 12:19:14 info: Server listening on port : 8080
+2024-03-01 12:19:14 info: DB connected successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:19:20 info: Notification created successfully
+2024-03-01 12:22:45 error: Retrieving all requests: Unknown column 'Requests.PassengerID' in 'field list'
+2024-03-01 12:23:26 info: Server listening on port : 8080
+2024-03-01 12:23:26 info: DB connected successfully
+2024-03-01 12:26:56 info: Server listening on port : 8080
+2024-03-01 12:26:56 info: DB connected successfully
+2024-03-01 12:27:04 info: Server listening on port : 8080
+2024-03-01 12:27:04 info: DB connected successfully
+2024-03-01 12:27:20 info: Server listening on port : 8080
+2024-03-01 12:27:20 info: DB connected successfully
+2024-03-01 12:27:26 info: Server listening on port : 8080
+2024-03-01 12:27:26 info: DB connected successfully
+2024-03-01 12:28:34 info: Server listening on port : 8080
+2024-03-01 12:28:34 info: DB connected successfully
+2024-03-01 12:39:26 info: Server listening on port : 8080
+2024-03-01 12:39:26 info: DB connected successfully
+2024-03-01 12:39:34 info: Server listening on port : 8080
+2024-03-01 12:39:34 info: DB connected successfully
+2024-03-01 12:39:38 info: Server listening on port : 8080
+2024-03-01 12:39:38 info: DB connected successfully
+2024-03-01 12:41:36 info: Server listening on port : 8080
+2024-03-01 12:41:36 info: DB connected successfully
+2024-03-01 12:41:39 info: Server listening on port : 8080
+2024-03-01 12:41:39 info: DB connected successfully
+2024-03-01 12:41:41 info: Server listening on port : 8080
+2024-03-01 12:41:41 info: DB connected successfully
+2024-03-01 12:41:48 info: Server listening on port : 8080
+2024-03-01 12:41:48 info: DB connected successfully
+2024-03-01 12:42:04 info: Server listening on port : 8080
+2024-03-01 12:42:04 info: DB connected successfully
+2024-03-01 12:42:07 info: Server listening on port : 8080
+2024-03-01 12:42:07 info: DB connected successfully
+2024-03-01 12:42:08 info: Server listening on port : 8080
+2024-03-01 12:42:08 info: DB connected successfully
+2024-03-01 12:42:14 info: Server listening on port : 8080
+2024-03-01 12:42:14 info: DB connected successfully
+2024-03-01 12:42:16 info: Server listening on port : 8080
+2024-03-01 12:42:16 info: DB connected successfully
+2024-03-01 12:42:28 info: Server listening on port : 8080
+2024-03-01 12:42:28 info: DB connected successfully
+2024-03-01 12:43:46 info: Server listening on port : 8080
+2024-03-01 12:43:46 info: DB connected successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:48 info: Notification created successfully
+2024-03-01 12:43:58 info: Server listening on port : 8080
+2024-03-01 12:43:58 info: DB connected successfully
+2024-03-01 12:44:59 info: Server listening on port : 8080
+2024-03-01 12:44:59 info: DB connected successfully
+2024-03-01 12:46:05 info: Server listening on port : 8080
+2024-03-01 12:46:05 info: DB connected successfully
+2024-03-01 12:46:09 info: Server listening on port : 8080
+2024-03-01 12:46:09 info: DB connected successfully
+2024-03-01 12:46:26 info: Server listening on port : 8080
+2024-03-01 12:46:26 info: DB connected successfully
+2024-03-01 12:46:55 info: Server listening on port : 8080
+2024-03-01 12:46:55 info: DB connected successfully
+2024-03-01 12:46:57 info: Server listening on port : 8080
+2024-03-01 12:46:57 info: DB connected successfully
+2024-03-01 12:46:58 info: Server listening on port : 8080
+2024-03-01 12:46:58 info: DB connected successfully
+2024-03-01 12:47:03 info: Server listening on port : 8080
+2024-03-01 12:47:03 info: DB connected successfully
+2024-03-01 12:47:05 info: Server listening on port : 8080
+2024-03-01 12:47:05 info: DB connected successfully
+2024-03-01 12:47:59 info: Server listening on port : 8080
+2024-03-01 12:47:59 info: DB connected successfully
+2024-03-01 12:49:44 info: Server listening on port : 8080
+2024-03-01 12:49:44 info: DB connected successfully
+2024-03-01 12:50:50 info: Server listening on port : 8080
+2024-03-01 12:50:50 info: DB connected successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:50:51 info: Notification created successfully
+2024-03-01 12:52:31 info: Server listening on port : 8080
+2024-03-01 12:52:32 info: DB connected successfully
+2024-03-01 12:52:35 info: Notification created successfully
+2024-03-01 12:52:35 info: Notification created successfully
+2024-03-01 12:52:35 info: Notification created successfully
+2024-03-01 12:52:36 info: Notification created successfully
+2024-03-01 12:52:36 info: Notification created successfully
+2024-03-01 12:52:36 info: Notification created successfully
+2024-03-01 12:52:36 info: Notification created successfully
+2024-03-01 12:53:38 info: Server listening on port : 8080
+2024-03-01 12:53:38 info: DB connected successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:53:40 info: Notification created successfully
+2024-03-01 12:55:30 info: Server listening on port : 8080
+2024-03-01 12:55:30 info: DB connected successfully
+2024-03-01 12:55:41 info: Server listening on port : 8080
+2024-03-01 12:55:41 info: DB connected successfully
+2024-03-01 12:55:45 error: Creating request: Cannot read properties of undefined (reading 'name')
+2024-03-01 12:56:21 info: Server listening on port : 8080
+2024-03-01 12:56:21 info: DB connected successfully
+2024-03-01 12:56:31 info: Server listening on port : 8080
+2024-03-01 12:56:31 info: DB connected successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:56:33 info: Notification created successfully
+2024-03-01 12:57:49 info: Server listening on port : 8080
+2024-03-01 12:57:49 info: DB connected successfully
+2024-03-01 12:59:07 info: Server listening on port : 8080
+2024-03-01 12:59:08 info: DB connected successfully
+2024-03-01 12:59:18 info: Server listening on port : 8080
+2024-03-01 12:59:18 info: DB connected successfully
+2024-03-01 12:59:20 info: Server listening on port : 8080
+2024-03-01 12:59:20 info: DB connected successfully
+2024-03-01 12:59:44 info: Server listening on port : 8080
+2024-03-01 12:59:44 info: DB connected successfully
+2024-03-01 12:59:46 info: Server listening on port : 8080
+2024-03-01 12:59:46 info: DB connected successfully
+2024-03-01 12:59:51 info: Server listening on port : 8080
+2024-03-01 12:59:51 info: DB connected successfully
+2024-03-01 13:00:28 info: Server listening on port : 8080
+2024-03-01 13:00:28 info: DB connected successfully
+2024-03-01 13:00:29 info: Server listening on port : 8080
+2024-03-01 13:00:29 info: DB connected successfully
+2024-03-01 13:00:31 info: Server listening on port : 8080
+2024-03-01 13:00:31 info: DB connected successfully
+2024-03-01 13:00:41 info: Server listening on port : 8080
+2024-03-01 13:00:41 info: DB connected successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:00:46 info: Notification created successfully
+2024-03-01 13:01:10 info: Server listening on port : 8080
+2024-03-01 13:01:10 info: DB connected successfully
+2024-03-01 13:01:14 info: Server listening on port : 8080
+2024-03-01 13:01:14 info: DB connected successfully
+2024-03-01 13:01:20 info: Server listening on port : 8080
+2024-03-01 13:01:20 info: DB connected successfully
+2024-03-01 13:01:22 info: Server listening on port : 8080
+2024-03-01 13:01:22 info: DB connected successfully
+2024-03-01 13:01:23 info: Server listening on port : 8080
+2024-03-01 13:01:23 info: DB connected successfully
+2024-03-01 13:01:30 info: Server listening on port : 8080
+2024-03-01 13:01:30 info: DB connected successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:37 info: Notification created successfully
+2024-03-01 13:01:51 info: Server listening on port : 8080
+2024-03-01 13:01:51 info: DB connected successfully
+2024-03-01 13:01:53 error: Creating request: Unexpected end of JSON input
+2024-03-01 13:02:07 info: Server listening on port : 8080
+2024-03-01 13:02:07 info: DB connected successfully
+2024-03-01 13:02:08 info: Server listening on port : 8080
+2024-03-01 13:02:08 info: DB connected successfully
+2024-03-01 13:02:14 info: Server listening on port : 8080
+2024-03-01 13:02:15 info: DB connected successfully
+2024-03-01 13:02:29 info: Server listening on port : 8080
+2024-03-01 13:02:29 info: DB connected successfully
+2024-03-01 13:02:31 info: Server listening on port : 8080
+2024-03-01 13:02:31 info: DB connected successfully
+2024-03-01 13:02:37 info: Server listening on port : 8080
+2024-03-01 13:02:37 info: DB connected successfully
+2024-03-01 13:02:38 info: Server listening on port : 8080
+2024-03-01 13:02:38 info: DB connected successfully
+2024-03-01 13:03:03 info: Server listening on port : 8080
+2024-03-01 13:03:03 info: DB connected successfully
+2024-03-01 13:03:05 info: Server listening on port : 8080
+2024-03-01 13:03:05 info: DB connected successfully
+2024-03-01 13:03:08 info: Server listening on port : 8080
+2024-03-01 13:03:08 info: DB connected successfully
+2024-03-01 13:03:10 info: Server listening on port : 8080
+2024-03-01 13:03:10 info: DB connected successfully
+2024-03-01 13:03:12 info: Server listening on port : 8080
+2024-03-01 13:03:12 info: DB connected successfully
+2024-03-01 13:03:14 info: Server listening on port : 8080
+2024-03-01 13:03:14 info: DB connected successfully
+2024-03-01 13:03:16 info: Server listening on port : 8080
+2024-03-01 13:03:16 info: DB connected successfully
+2024-03-01 13:03:20 info: Server listening on port : 8080
+2024-03-01 13:03:20 info: DB connected successfully
+2024-03-01 13:03:32 info: Server listening on port : 8080
+2024-03-01 13:03:32 info: DB connected successfully
+2024-03-01 13:03:36 info: Server listening on port : 8080
+2024-03-01 13:03:36 info: DB connected successfully
+2024-03-01 13:03:39 info: Server listening on port : 8080
+2024-03-01 13:03:39 info: DB connected successfully
+2024-03-01 13:03:41 info: Server listening on port : 8080
+2024-03-01 13:03:42 info: DB connected successfully
+2024-03-01 13:03:54 info: Server listening on port : 8080
+2024-03-01 13:03:54 info: DB connected successfully
+2024-03-01 13:04:09 info: Server listening on port : 8080
+2024-03-01 13:04:09 info: DB connected successfully
+2024-03-01 13:04:10 info: Server listening on port : 8080
+2024-03-01 13:04:10 info: DB connected successfully
+2024-03-01 13:04:13 info: Server listening on port : 8080
+2024-03-01 13:04:13 info: DB connected successfully
+2024-03-01 13:04:24 info: Server listening on port : 8080
+2024-03-01 13:04:24 info: DB connected successfully
+2024-03-01 13:04:26 info: Server listening on port : 8080
+2024-03-01 13:04:26 info: DB connected successfully
+2024-03-01 13:04:41 info: Server listening on port : 8080
+2024-03-01 13:04:41 info: DB connected successfully
+2024-03-01 13:04:43 info: Server listening on port : 8080
+2024-03-01 13:04:43 info: DB connected successfully
+2024-03-01 13:04:45 info: Server listening on port : 8080
+2024-03-01 13:04:45 info: DB connected successfully
+2024-03-01 13:04:46 info: Server listening on port : 8080
+2024-03-01 13:04:46 info: DB connected successfully
+2024-03-01 13:04:48 error: Creating request: decryptData is not a function
+2024-03-01 13:05:10 info: Server listening on port : 8080
+2024-03-01 13:05:10 info: DB connected successfully
+2024-03-01 13:05:16 info: Server listening on port : 8080
+2024-03-01 13:05:16 info: DB connected successfully
+2024-03-01 13:05:21 info: Server listening on port : 8080
+2024-03-01 13:05:21 info: DB connected successfully
+2024-03-01 13:05:29 info: Server listening on port : 8080
+2024-03-01 13:05:29 info: DB connected successfully
+2024-03-01 13:05:32 info: Server listening on port : 8080
+2024-03-01 13:05:32 info: DB connected successfully
+2024-03-01 13:05:34 error: Creating request: decryptData is not a function
+2024-03-01 13:06:25 info: Server listening on port : 8080
+2024-03-01 13:06:25 info: DB connected successfully
+2024-03-01 13:06:27 info: Server listening on port : 8080
+2024-03-01 13:06:27 info: DB connected successfully
+2024-03-01 13:06:47 info: Server listening on port : 8080
+2024-03-01 13:06:47 info: DB connected successfully
+2024-03-01 13:06:51 error: Creating request: Cannot access 'encryptData' before initialization
+2024-03-01 13:07:22 info: Server listening on port : 8080
+2024-03-01 13:07:22 info: DB connected successfully
+2024-03-01 13:07:28 info: Server listening on port : 8080
+2024-03-01 13:07:28 info: DB connected successfully
+2024-03-01 13:07:31 info: Server listening on port : 8080
+2024-03-01 13:07:31 info: DB connected successfully
+2024-03-01 13:07:36 error: Creating request: Cannot access 'encryptData' before initialization
+2024-03-01 13:08:02 info: Server listening on port : 8080
+2024-03-01 13:08:02 info: DB connected successfully
+2024-03-01 13:08:03 info: Server listening on port : 8080
+2024-03-01 13:08:03 info: DB connected successfully
+2024-03-01 13:08:05 info: Server listening on port : 8080
+2024-03-01 13:08:05 info: DB connected successfully
+2024-03-01 13:08:06 error: Creating request: Cannot access 'encryptData' before initialization
+2024-03-01 13:08:23 info: Server listening on port : 8080
+2024-03-01 13:08:23 info: DB connected successfully
+2024-03-01 13:08:28 info: Server listening on port : 8080
+2024-03-01 13:08:28 info: DB connected successfully
+2024-03-01 13:10:00 info: Server listening on port : 8080
+2024-03-01 13:10:00 info: DB connected successfully
+2024-03-01 13:10:01 info: Server listening on port : 8080
+2024-03-01 13:10:01 info: DB connected successfully
+2024-03-01 13:10:13 info: Server listening on port : 8080
+2024-03-01 13:10:13 info: DB connected successfully
+2024-03-01 13:10:16 info: Server listening on port : 8080
+2024-03-01 13:10:16 info: DB connected successfully
+2024-03-01 13:10:27 info: Server listening on port : 8080
+2024-03-01 13:10:27 info: DB connected successfully
+2024-03-01 13:11:40 info: Server listening on port : 8080
+2024-03-01 13:11:40 info: DB connected successfully
+2024-03-01 13:11:41 info: Server listening on port : 8080
+2024-03-01 13:11:41 info: DB connected successfully
+2024-03-01 13:11:57 info: Server listening on port : 8080
+2024-03-01 13:11:57 info: DB connected successfully
+2024-03-01 13:11:59 info: Server listening on port : 8080
+2024-03-01 13:12:00 info: DB connected successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:04 info: Notification created successfully
+2024-03-01 13:12:36 info: Server listening on port : 8080
+2024-03-01 13:12:36 info: DB connected successfully
+2024-03-01 13:14:17 info: Server listening on port : 8080
+2024-03-01 13:14:17 info: DB connected successfully
+2024-03-01 13:14:19 info: Server listening on port : 8080
+2024-03-01 13:14:19 info: DB connected successfully
+2024-03-01 13:14:22 info: Server listening on port : 8080
+2024-03-01 13:14:22 info: DB connected successfully
+2024-03-01 13:14:23 info: Server listening on port : 8080
+2024-03-01 13:14:23 info: DB connected successfully
+2024-03-01 13:14:24 info: Server listening on port : 8080
+2024-03-01 13:14:25 info: DB connected successfully
+2024-03-01 13:14:31 info: Server listening on port : 8080
+2024-03-01 13:14:31 info: DB connected successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:34 info: Notification created successfully
+2024-03-01 13:14:57 info: Server listening on port : 8080
+2024-03-01 13:14:57 info: DB connected successfully
+2024-03-01 13:14:59 info: Server listening on port : 8080
+2024-03-01 13:14:59 info: DB connected successfully
+2024-03-01 13:15:05 info: Server listening on port : 8080
+2024-03-01 13:15:05 info: DB connected successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:07 info: Notification created successfully
+2024-03-01 13:15:20 info: Server listening on port : 8080
+2024-03-01 13:15:20 info: DB connected successfully
+2024-03-01 13:15:22 info: Server listening on port : 8080
+2024-03-01 13:15:22 info: DB connected successfully
+2024-03-01 13:15:54 info: Server listening on port : 8080
+2024-03-01 13:15:54 info: DB connected successfully
+2024-03-01 13:15:55 info: Server listening on port : 8080
+2024-03-01 13:15:55 info: DB connected successfully
+2024-03-01 13:15:58 info: Server listening on port : 8080
+2024-03-01 13:15:58 info: DB connected successfully
+2024-03-01 13:16:00 info: Server listening on port : 8080
+2024-03-01 13:16:00 info: DB connected successfully
+2024-03-01 13:16:01 info: Server listening on port : 8080
+2024-03-01 13:16:01 info: DB connected successfully
+2024-03-01 13:16:09 info: Server listening on port : 8080
+2024-03-01 13:16:09 info: DB connected successfully
+2024-03-01 13:16:11 info: Server listening on port : 8080
+2024-03-01 13:16:11 info: DB connected successfully
+2024-03-01 13:16:13 info: Server listening on port : 8080
+2024-03-01 13:16:13 info: DB connected successfully
+2024-03-01 13:16:18 info: Server listening on port : 8080
+2024-03-01 13:16:18 info: DB connected successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:16:21 info: Notification created successfully
+2024-03-01 13:17:00 info: Server listening on port : 8080
+2024-03-01 13:17:00 info: DB connected successfully
+2024-03-01 13:19:06 error: JWT verification error: jwt expired
+2024-03-01 13:20:08 info: Server listening on port : 8080
+2024-03-01 13:20:08 info: DB connected successfully
+2024-03-01 13:20:43 info: Notifications retrieved successfully
+2024-03-01 13:24:11 info: Server listening on port : 8080
+2024-03-01 13:24:11 info: DB connected successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:24:13 info: Notification created successfully
+2024-03-01 13:25:17 info: Server listening on port : 8080
+2024-03-01 13:25:17 info: DB connected successfully
+2024-03-01 13:25:18 info: Server listening on port : 8080
+2024-03-01 13:25:18 info: DB connected successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:25:19 info: Notification created successfully
+2024-03-01 13:27:50 info: Server listening on port : 8080
+2024-03-01 13:27:50 info: DB connected successfully
+2024-03-01 13:28:20 info: Server listening on port : 8080
+2024-03-01 13:28:20 info: DB connected successfully
+2024-03-01 13:28:23 info: Server listening on port : 8080
+2024-03-01 13:28:23 info: DB connected successfully
+2024-03-01 13:28:30 info: Notification created successfully
+2024-03-01 13:28:30 info: Notification created successfully
+2024-03-01 13:31:51 info: Server listening on port : 8080
+2024-03-01 13:31:52 info: DB connected successfully
+2024-03-01 13:39:07 info: Server listening on port : 8080
+2024-03-01 13:39:07 info: DB connected successfully
+2024-03-01 13:39:19 info: Server listening on port : 8080
+2024-03-01 13:39:19 info: DB connected successfully
+2024-03-01 13:39:19 info: Server listening on port : 8080
+2024-03-01 13:39:19 info: DB connected successfully
+2024-03-01 13:39:24 info: Server listening on port : 8080
+2024-03-01 13:39:24 info: DB connected successfully
+2024-03-01 13:39:29 info: Server listening on port : 8080
+2024-03-01 13:39:29 info: DB connected successfully
+2024-03-01 13:40:11 info: Server listening on port : 8080
+2024-03-01 13:40:11 info: DB connected successfully
+2024-03-01 13:40:37 info: Server listening on port : 8080
+2024-03-01 13:40:37 info: DB connected successfully
+2024-03-01 13:40:46 info: Server listening on port : 8080
+2024-03-01 13:40:46 info: DB connected successfully
+2024-03-01 13:41:32 info: Server listening on port : 8080
+2024-03-01 13:41:32 info: DB connected successfully
+2024-03-01 13:41:36 info: Server listening on port : 8080
+2024-03-01 13:41:36 info: DB connected successfully
+2024-03-01 13:42:25 info: Server listening on port : 8080
+2024-03-01 13:42:25 info: DB connected successfully
+2024-03-01 13:42:30 info: Server listening on port : 8080
+2024-03-01 13:42:30 info: DB connected successfully
+2024-03-01 13:42:32 info: Server listening on port : 8080
+2024-03-01 13:42:32 info: DB connected successfully
+2024-03-01 13:43:04 info: Server listening on port : 8080
+2024-03-01 13:43:04 info: DB connected successfully
+2024-03-01 13:43:19 info: Server listening on port : 8080
+2024-03-01 13:43:19 info: DB connected successfully
+2024-03-01 13:43:39 info: Server listening on port : 8080
+2024-03-01 13:43:39 info: DB connected successfully
+2024-03-01 13:44:00 info: Server listening on port : 8080
+2024-03-01 13:44:00 info: DB connected successfully
+2024-03-01 13:44:01 info: Server listening on port : 8080
+2024-03-01 13:44:01 info: DB connected successfully
+2024-03-01 13:44:05 info: Server listening on port : 8080
+2024-03-01 13:44:05 info: DB connected successfully
+2024-03-01 13:44:06 info: Server listening on port : 8080
+2024-03-01 13:44:06 info: DB connected successfully
+2024-03-01 13:44:17 info: Server listening on port : 8080
+2024-03-01 13:44:17 info: DB connected successfully
+2024-03-01 13:44:18 info: Server listening on port : 8080
+2024-03-01 13:44:18 info: DB connected successfully
+2024-03-01 13:45:18 info: Server listening on port : 8080
+2024-03-01 13:45:18 info: DB connected successfully
+2024-03-01 13:45:31 info: Server listening on port : 8080
+2024-03-01 13:45:31 info: DB connected successfully
+2024-03-01 13:45:34 info: Server listening on port : 8080
+2024-03-01 13:45:34 info: DB connected successfully
+2024-03-01 13:45:36 info: Server listening on port : 8080
+2024-03-01 13:45:36 info: DB connected successfully
+2024-03-01 13:45:43 info: Server listening on port : 8080
+2024-03-01 13:45:43 info: DB connected successfully
+2024-03-01 13:45:46 info: Server listening on port : 8080
+2024-03-01 13:45:46 info: DB connected successfully
+2024-03-01 13:45:48 info: Server listening on port : 8080
+2024-03-01 13:45:48 info: DB connected successfully
+2024-03-01 13:45:57 info: Server listening on port : 8080
+2024-03-01 13:45:57 info: DB connected successfully
+2024-03-01 13:46:15 info: Notification created successfully
+2024-03-01 13:46:15 info: Notification created successfully
+2024-03-01 13:46:52 info: Server listening on port : 8080
+2024-03-01 13:46:52 info: DB connected successfully
+2024-03-01 13:46:54 info: Server listening on port : 8080
+2024-03-01 13:46:54 info: DB connected successfully
+2024-03-01 13:46:58 info: Server listening on port : 8080
+2024-03-01 13:46:58 info: DB connected successfully
+2024-03-01 13:48:35 info: Server listening on port : 8080
+2024-03-01 13:48:35 info: DB connected successfully
+2024-03-01 13:48:40 info: Server listening on port : 8080
+2024-03-01 13:48:40 info: DB connected successfully
+2024-03-01 14:00:28 info: Server listening on port : 8080
+2024-03-01 14:00:28 info: DB connected successfully
+2024-03-01 14:00:52 info: Server listening on port : 8080
+2024-03-01 14:00:52 info: DB connected successfully
+2024-03-01 14:01:40 info: Server listening on port : 8080
+2024-03-01 14:01:40 info: DB connected successfully
+2024-03-01 14:02:11 info: Server listening on port : 8080
+2024-03-01 14:02:11 info: DB connected successfully
+2024-03-01 14:04:46 info: Notification created successfully
+2024-03-01 14:04:46 info: Notification created successfully
+2024-03-01 14:05:09 error: Taking and approving request: Unknown column 'booking.RequestID' in 'field list'
+2024-03-01 14:07:42 info: Server listening on port : 8080
+2024-03-01 14:07:42 info: DB connected successfully
+2024-03-01 14:07:46 info: Server listening on port : 8080
+2024-03-01 14:07:46 info: DB connected successfully
+2024-03-01 14:07:48 error: Taking and approving request: Unknown column 'booking.RequestID' in 'field list'
+2024-03-01 14:10:52 info: Server listening on port : 8080
+2024-03-01 14:10:52 info: DB connected successfully
+2024-03-01 14:11:03 error: Taking and approving request: Bookings is not associated to Requests!
+2024-03-01 14:11:41 info: Server listening on port : 8080
+2024-03-01 14:11:41 info: DB connected successfully
+2024-03-01 14:12:00 info: Server listening on port : 8080
+2024-03-01 14:12:00 info: DB connected successfully
+2024-03-01 14:12:03 info: Server listening on port : 8080
+2024-03-01 14:12:03 info: DB connected successfully
+2024-03-01 14:12:17 info: Server listening on port : 8080
+2024-03-01 14:12:17 info: DB connected successfully
+2024-03-01 14:13:06 info: Server listening on port : 8080
+2024-03-01 14:13:06 info: DB connected successfully
+2024-03-01 14:13:29 info: Server listening on port : 8080
+2024-03-01 14:13:29 info: DB connected successfully
+2024-03-01 14:14:22 info: Server listening on port : 8080
+2024-03-01 14:14:22 info: DB connected successfully
+2024-03-01 14:14:50 info: Server listening on port : 8080
+2024-03-01 14:14:50 info: DB connected successfully
+2024-03-01 14:15:20 info: Server listening on port : 8080
+2024-03-01 14:15:20 info: DB connected successfully
+2024-03-01 14:15:24 info: Server listening on port : 8080
+2024-03-01 14:15:24 info: DB connected successfully
+2024-03-01 14:15:26 info: Server listening on port : 8080
+2024-03-01 14:15:26 info: DB connected successfully
+2024-03-01 14:16:01 info: Server listening on port : 8080
+2024-03-01 14:16:01 info: DB connected successfully
+2024-03-01 14:16:16 info: Server listening on port : 8080
+2024-03-01 14:16:16 info: DB connected successfully
+2024-03-01 14:17:17 info: Server listening on port : 8080
+2024-03-01 14:17:18 info: DB connected successfully
+2024-03-01 14:18:07 info: Server listening on port : 8080
+2024-03-01 14:18:07 info: DB connected successfully
+2024-03-01 14:18:22 info: Server listening on port : 8080
+2024-03-01 14:18:22 info: DB connected successfully
+2024-03-01 14:18:30 error: Taking and approving request: Bookings is not associated to Requests!
+2024-03-01 14:20:40 info: Server listening on port : 8080
+2024-03-01 14:20:40 info: DB connected successfully
+2024-03-01 14:20:42 info: Server listening on port : 8080
+2024-03-01 14:20:42 info: DB connected successfully
+2024-03-01 14:20:50 error: Taking and approving request: Bookings is not associated to Requests!
+2024-03-01 14:21:59 info: Server listening on port : 8080
+2024-03-01 14:21:59 info: DB connected successfully
+2024-03-01 14:22:34 info: Server listening on port : 8080
+2024-03-01 14:22:34 info: DB connected successfully
+2024-03-01 14:22:35 info: Server listening on port : 8080
+2024-03-01 14:22:35 info: DB connected successfully
+2024-03-01 14:22:45 error: Taking and approving request: Op is not defined
+2024-03-01 14:22:54 info: Server listening on port : 8080
+2024-03-01 14:22:54 info: DB connected successfully
+2024-03-01 14:22:59 info: Server listening on port : 8080
+2024-03-01 14:22:59 info: DB connected successfully
+2024-03-01 14:23:08 info: Server listening on port : 8080
+2024-03-01 14:23:08 info: DB connected successfully
+2024-03-01 14:23:11 error: Taking and approving request: Unknown column 'Trips.UserId' in 'where clause'
+2024-03-01 14:24:09 info: Server listening on port : 8080
+2024-03-01 14:24:09 info: DB connected successfully
+2024-03-01 14:24:12 error: Taking and approving request: Unknown column 'Trips.TravelDate' in 'where clause'
+2024-03-01 14:25:32 info: Server listening on port : 8080
+2024-03-01 14:25:33 info: DB connected successfully
+2024-03-01 14:25:38 error: Taking and approving request: Unknown column 'Trips.SeatsAvailable' in 'where clause'
+2024-03-01 14:26:12 info: Server listening on port : 8080
+2024-03-01 14:26:12 info: DB connected successfully
+2024-03-01 14:26:15 error: Taking and approving request: No matching trip found for the driver
+2024-03-01 14:28:24 info: Notification created successfully
+2024-03-01 14:28:24 info: Notification created successfully
+2024-03-01 14:28:37 error: Taking and approving request: WHERE parameter "PassengerID" has invalid "undefined" value
+2024-03-01 14:30:21 info: Server listening on port : 8080
+2024-03-01 14:30:21 info: DB connected successfully
+2024-03-01 14:30:23 info: Server listening on port : 8080
+2024-03-01 14:30:23 info: DB connected successfully
+2024-03-01 14:30:27 info: Server listening on port : 8080
+2024-03-01 14:30:27 info: DB connected successfully
+2024-03-01 14:30:29 info: Server listening on port : 8080
+2024-03-01 14:30:29 info: DB connected successfully
+2024-03-01 14:30:33 info: Server listening on port : 8080
+2024-03-01 14:30:33 info: DB connected successfully
+2024-03-01 14:30:35 error: Taking and approving request: WHERE parameter "PassengerID" has invalid "undefined" value
+2024-03-01 14:31:50 info: Server listening on port : 8080
+2024-03-01 14:31:50 info: DB connected successfully
+2024-03-01 14:31:53 error: Taking and approving request: WHERE parameter "PassengerID" has invalid "undefined" value
+2024-03-01 14:34:44 info: Server listening on port : 8080
+2024-03-01 14:34:44 info: DB connected successfully
+2024-03-01 14:34:47 error: Taking and approving request: WHERE parameter "PassengerID" has invalid "undefined" value
+2024-03-01 14:35:35 info: Server listening on port : 8080
+2024-03-01 14:35:35 info: DB connected successfully
+2024-03-01 14:35:38 error: Taking and approving request: WHERE parameter "PassengerID" has invalid "undefined" value
+2024-03-01 14:35:56 info: Server listening on port : 8080
+2024-03-01 14:35:56 info: DB connected successfully
+2024-03-01 14:36:05 info: Server listening on port : 8080
+2024-03-01 14:36:05 info: DB connected successfully
+2024-03-01 14:36:12 error: Taking and approving request: Data truncated for column 'Status' at row 1
+2024-03-01 14:37:09 info: Server listening on port : 8080
+2024-03-01 14:37:09 info: DB connected successfully
+2024-03-01 14:37:13 info: Notification created successfully
+2024-03-01 14:39:32 info: Notifications retrieved successfully
+2024-03-01 14:40:30 error: Getting driver bookings: Unknown column 'Bookings.RequestID' in 'field list'
+2024-03-01 14:40:40 error: Retrieving bookings for a trip: Unknown column 'Bookings.RequestID' in 'field list'
+2024-03-01 14:40:50 error: Fetching a booking: Unknown column 'Bookings.RequestID' in 'field list'
+2024-03-01 14:41:13 info: Server listening on port : 8080
+2024-03-01 14:41:13 info: DB connected successfully
+2024-03-01 14:41:27 info: Driver bookings retrieved successfully
+2024-03-01 14:44:46 info: Server listening on port : 8080
+2024-03-01 14:44:46 info: DB connected successfully
+2024-03-01 14:45:00 info: Server listening on port : 8080
+2024-03-01 14:45:00 info: DB connected successfully
+2024-03-01 14:45:01 info: Server listening on port : 8080
+2024-03-01 14:45:01 info: DB connected successfully
+2024-03-01 14:45:12 info: Server listening on port : 8080
+2024-03-01 14:45:12 info: DB connected successfully
+2024-03-01 14:45:25 info: Server listening on port : 8080
+2024-03-01 14:45:25 info: DB connected successfully
+2024-03-01 14:45:35 info: Server listening on port : 8080
+2024-03-01 14:45:35 info: DB connected successfully
+2024-03-01 14:45:55 info: Server listening on port : 8080
+2024-03-01 14:45:55 info: DB connected successfully
+2024-03-01 14:45:57 info: Server listening on port : 8080
+2024-03-01 14:45:57 info: DB connected successfully
+2024-03-01 14:45:58 info: Server listening on port : 8080
+2024-03-01 14:45:58 info: DB connected successfully
+2024-03-01 14:46:01 info: Server listening on port : 8080
+2024-03-01 14:46:01 info: DB connected successfully
+2024-03-01 14:46:09 info: Server listening on port : 8080
+2024-03-01 14:46:09 info: DB connected successfully
+2024-03-01 14:46:10 info: Server listening on port : 8080
+2024-03-01 14:46:10 info: DB connected successfully
+2024-03-01 14:46:37 info: Server listening on port : 8080
+2024-03-01 14:46:37 info: DB connected successfully
+2024-03-01 14:46:38 info: Server listening on port : 8080
+2024-03-01 14:46:38 info: DB connected successfully
+2024-03-01 14:46:40 info: Server listening on port : 8080
+2024-03-01 14:46:40 info: DB connected successfully
+2024-03-01 14:46:53 info: Server listening on port : 8080
+2024-03-01 14:46:53 info: DB connected successfully
+2024-03-01 14:47:28 error: Fetching a trip: Trip with ID driver not found
+2024-03-01 14:47:36 info: Server listening on port : 8080
+2024-03-01 14:47:36 info: DB connected successfully
+2024-03-01 14:47:38 info: Server listening on port : 8080
+2024-03-01 14:47:38 info: DB connected successfully
+2024-03-01 14:48:02 info: Trips retrieved successfully
+2024-03-01 15:17:25 info: Server listening on port : 8080
+2024-03-01 15:17:25 info: DB connected successfully
+2024-03-01 15:17:53 info: Notification created successfully
+2024-03-01 15:17:53 info: Booking successfully created
+2024-03-01 15:18:19 info: Notification created successfully
+2024-03-01 15:18:19 info: Booking approved successfully
+2024-03-01 15:18:23 info: Notifications retrieved successfully
+2024-03-01 15:22:12 info: Server listening on port : 8080
+2024-03-01 15:22:12 info: DB connected successfully
+2024-03-01 15:22:14 info: Server listening on port : 8080
+2024-03-01 15:22:14 info: DB connected successfully
+2024-03-01 15:22:51 info: Notification created successfully
+2024-03-01 15:22:51 info: Notification created successfully
+2024-03-01 15:22:56 info: Notifications retrieved successfully
+2024-03-01 15:23:29 info: Notifications retrieved successfully
+2024-03-01 15:24:45 info: Server listening on port : 8080
+2024-03-01 15:24:45 info: DB connected successfully
+2024-03-01 15:45:23 info: Server listening on port : 8080
+2024-03-01 15:45:23 info: DB connected successfully
+2024-03-01 15:48:00 info: Server listening on port : 8080
+2024-03-01 15:48:01 info: DB connected successfully
+2024-03-01 15:48:18 info: Server listening on port : 8080
+2024-03-01 15:48:18 info: DB connected successfully
+2024-03-01 15:48:21 info: Server listening on port : 8080
+2024-03-01 15:48:21 info: DB connected successfully
+2024-03-01 15:49:00 info: Server listening on port : 8080
+2024-03-01 15:49:00 info: DB connected successfully
+2024-03-01 16:06:32 info: Server listening on port : 8080
+2024-03-01 16:06:32 info: DB connected successfully
+2024-03-01 16:09:46 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:09:46 info: Message sent: A verification email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:14:59 info: Server listening on port : 8080
+2024-03-01 16:14:59 info: DB connected successfully
+2024-03-01 16:15:00 info: Server listening on port : 8080
+2024-03-01 16:15:00 info: DB connected successfully
+2024-03-01 16:15:04 info: Server listening on port : 8080
+2024-03-01 16:15:04 info: DB connected successfully
+2024-03-01 16:15:08 info: Server listening on port : 8080
+2024-03-01 16:15:08 info: DB connected successfully
+2024-03-01 16:17:02 info: Server listening on port : 8080
+2024-03-01 16:17:02 info: DB connected successfully
+2024-03-01 16:17:37 info: Server listening on port : 8080
+2024-03-01 16:17:37 info: DB connected successfully
+2024-03-01 16:19:06 info: Server listening on port : 8080
+2024-03-01 16:19:06 info: DB connected successfully
+2024-03-01 16:19:12 info: Server listening on port : 8080
+2024-03-01 16:19:12 info: DB connected successfully
+2024-03-01 16:24:06 info: Server listening on port : 8080
+2024-03-01 16:24:06 info: DB connected successfully
+2024-03-01 16:24:09 info: Server listening on port : 8080
+2024-03-01 16:24:09 info: DB connected successfully
+2024-03-01 16:24:12 info: Server listening on port : 8080
+2024-03-01 16:24:12 info: DB connected successfully
+2024-03-01 16:24:23 info: Server listening on port : 8080
+2024-03-01 16:24:23 info: DB connected successfully
+2024-03-01 16:24:33 info: Server listening on port : 8080
+2024-03-01 16:24:33 info: DB connected successfully
+2024-03-01 16:24:37 error: Forgot Password: Invalid email: fistonalvin
+2024-03-01 16:24:46 error: Forgot Password: notNull Violation: ResetPasswordToken.UserId cannot be null
+2024-03-01 16:25:57 error: Forgot Password: notNull Violation: ResetPasswordToken.UserId cannot be null
+2024-03-01 16:26:41 info: Server listening on port : 8080
+2024-03-01 16:26:41 info: DB connected successfully
+2024-03-01 16:26:44 info: Server listening on port : 8080
+2024-03-01 16:26:44 info: DB connected successfully
+2024-03-01 16:26:45 info: Server listening on port : 8080
+2024-03-01 16:26:45 info: DB connected successfully
+2024-03-01 16:26:50 info: Server listening on port : 8080
+2024-03-01 16:26:50 info: DB connected successfully
+2024-03-01 16:26:52 info: Server listening on port : 8080
+2024-03-01 16:26:52 info: DB connected successfully
+2024-03-01 16:26:53 info: Server listening on port : 8080
+2024-03-01 16:26:53 info: DB connected successfully
+2024-03-01 16:26:56 error: Forgot Password: notNull Violation: ResetPasswordToken.UserId cannot be null
+2024-03-01 16:27:17 info: Server listening on port : 8080
+2024-03-01 16:27:17 info: DB connected successfully
+2024-03-01 16:27:21 error: Forgot Password: notNull Violation: ResetPasswordToken.UserId cannot be null
+2024-03-01 16:27:28 info: Server listening on port : 8080
+2024-03-01 16:27:28 info: DB connected successfully
+2024-03-01 16:27:34 error: Forgot Password: notNull Violation: ResetPasswordToken.UserId cannot be null
+2024-03-01 16:27:55 info: Server listening on port : 8080
+2024-03-01 16:27:55 info: DB connected successfully
+2024-03-01 16:28:02 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:28:02 info: Message sent: A password reset email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:28:17 info: Server listening on port : 8080
+2024-03-01 16:28:17 info: DB connected successfully
+2024-03-01 16:28:18 info: Server listening on port : 8080
+2024-03-01 16:28:18 info: DB connected successfully
+2024-03-01 16:28:23 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:28:23 info: Message sent: A password reset email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:29:34 info: Server listening on port : 8080
+2024-03-01 16:29:34 info: DB connected successfully
+2024-03-01 16:30:19 info: Server listening on port : 8080
+2024-03-01 16:30:19 info: DB connected successfully
+2024-03-01 16:30:27 info: Server listening on port : 8080
+2024-03-01 16:30:27 info: DB connected successfully
+2024-03-01 16:30:31 info: Server listening on port : 8080
+2024-03-01 16:30:31 info: DB connected successfully
+2024-03-01 16:30:34 info: Server listening on port : 8080
+2024-03-01 16:30:34 info: DB connected successfully
+2024-03-01 16:30:35 info: Server listening on port : 8080
+2024-03-01 16:30:35 info: DB connected successfully
+2024-03-01 16:30:42 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:30:42 info: Message sent: A password reset email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:38:46 info: Server listening on port : 8080
+2024-03-01 16:38:46 info: DB connected successfully
+2024-03-01 16:38:48 info: Server listening on port : 8080
+2024-03-01 16:38:48 info: DB connected successfully
+2024-03-01 16:38:50 info: Server listening on port : 8080
+2024-03-01 16:38:50 info: DB connected successfully
+2024-03-01 16:39:09 info: Server listening on port : 8080
+2024-03-01 16:39:09 info: DB connected successfully
+2024-03-01 16:39:11 info: Server listening on port : 8080
+2024-03-01 16:39:11 info: DB connected successfully
+2024-03-01 16:39:18 info: Server listening on port : 8080
+2024-03-01 16:39:18 info: DB connected successfully
+2024-03-01 16:39:51 info: Server listening on port : 8080
+2024-03-01 16:39:51 info: DB connected successfully
+2024-03-01 16:42:25 info: Server listening on port : 8080
+2024-03-01 16:42:25 info: DB connected successfully
+2024-03-01 16:43:27 info: Server listening on port : 8080
+2024-03-01 16:43:27 info: DB connected successfully
+2024-03-01 16:43:43 info: Server listening on port : 8080
+2024-03-01 16:43:43 info: DB connected successfully
+2024-03-01 16:44:11 info: Server listening on port : 8080
+2024-03-01 16:44:11 info: DB connected successfully
+2024-03-01 16:44:17 info: Server listening on port : 8080
+2024-03-01 16:44:17 info: DB connected successfully
+2024-03-01 16:44:24 info: Server listening on port : 8080
+2024-03-01 16:44:24 info: DB connected successfully
+2024-03-01 16:44:25 info: Server listening on port : 8080
+2024-03-01 16:44:25 info: DB connected successfully
+2024-03-01 16:44:27 info: Server listening on port : 8080
+2024-03-01 16:44:27 info: DB connected successfully
+2024-03-01 16:44:28 info: Server listening on port : 8080
+2024-03-01 16:44:28 info: DB connected successfully
+2024-03-01 16:44:29 info: Server listening on port : 8080
+2024-03-01 16:44:30 info: DB connected successfully
+2024-03-01 16:44:34 info: Server listening on port : 8080
+2024-03-01 16:44:34 info: DB connected successfully
+2024-03-01 16:44:41 info: Server listening on port : 8080
+2024-03-01 16:44:41 info: DB connected successfully
+2024-03-01 16:44:42 info: Server listening on port : 8080
+2024-03-01 16:44:42 info: DB connected successfully
+2024-03-01 16:44:58 info: Server listening on port : 8080
+2024-03-01 16:44:58 info: DB connected successfully
+2024-03-01 16:44:59 info: Server listening on port : 8080
+2024-03-01 16:44:59 info: DB connected successfully
+2024-03-01 16:45:02 info: Server listening on port : 8080
+2024-03-01 16:45:02 info: DB connected successfully
+2024-03-01 16:45:52 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:45:52 info: Message sent: A password reset email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:47:07 error: Reset Password: user.setPassword is not a function
+2024-03-01 16:48:03 info: Server listening on port : 8080
+2024-03-01 16:48:03 info: DB connected successfully
+2024-03-01 16:48:10 info: Server listening on port : 8080
+2024-03-01 16:48:10 info: DB connected successfully
+2024-03-01 16:48:13 info: Server listening on port : 8080
+2024-03-01 16:48:13 info: DB connected successfully
+2024-03-01 16:48:15 info: Server listening on port : 8080
+2024-03-01 16:48:15 info: DB connected successfully
+2024-03-01 16:48:20 info: Password reset successfully
+2024-03-01 16:48:27 error: Login-pw: Invalid credentials from fistonalvin@gmail.com
+2024-03-01 16:48:33 error: Login-pw: Invalid credentials from fistonalvin@gmail.com
+2024-03-01 16:48:39 error: Login-pw: Invalid credentials from fistonalvin@gmail.com
+2024-03-01 16:49:00 info: Server listening on port : 8080
+2024-03-01 16:49:00 info: DB connected successfully
+2024-03-01 16:49:02 error: Login-pw: Invalid credentials from fistonalvin@gmail.com
+2024-03-01 16:49:16 info: Sent email to fistonalvin@gmail.com successfully.
+2024-03-01 16:49:16 info: Message sent: A password reset email has been sent to fistonalvin@gmail.com.
+2024-03-01 16:49:31 info: Password reset successfully

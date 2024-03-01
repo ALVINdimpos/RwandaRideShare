@@ -15,13 +15,19 @@ module.exports = (sequelize, DataTypes) => {
         as: 'trips',
       });
       User.hasMany(models.Bookings, {
+        foreignKey: 'PassengerID',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       });
       User.hasMany(models.Requests, {
+        foreignKey: 'UserID', as: 'requests',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       });
+         User.hasOne(models.ResetPasswordToken, {
+           foreignKey: 'UserId',
+           as: 'resetPasswordToken',
+         });
     }
   }
   User.init(

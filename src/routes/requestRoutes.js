@@ -5,18 +5,16 @@ const {
   createRequest,
   getAllRequests,
   getOneRequest,
-  updateRequestStatus,
-  deleteRequest,
+  takeAndApproveRequest,
 } = require('../controllers/requestsController');
 
-const { isPassenger } = require('../middleware');
+const { isPassenger,isDriver } = require('../middleware');
 const router = express.Router();
 
 // Request routes
 router.post('/', isPassenger, createRequest);
 router.get('/', isPassenger, getAllRequests);
-router.get('/:id',  getOneRequest);
-router.put('/:id', updateRequestStatus);
-router.delete('/:id', isPassenger, deleteRequest);
+router.get('/:id', isPassenger, getOneRequest);
+router.put('/takeAndApprove/:requestId', isDriver, takeAndApproveRequest);
 
 module.exports = router;
