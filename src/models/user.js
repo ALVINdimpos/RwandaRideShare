@@ -28,6 +28,22 @@ module.exports = (sequelize, DataTypes) => {
            foreignKey: 'UserId',
            as: 'resetPasswordToken',
          });
+      User.hasOne(models.UserSubscription, {
+        foreignKey: 'userId',
+        as: 'subscription',
+      });
+      User.hasOne(models.UserSubscription, {
+        foreignKey: 'userId',
+        as: 'userSubscription',
+      });
+       User.hasMany(models.Message, {
+         foreignKey: 'senderId',
+         as: 'sentMessages',
+       });
+       User.hasMany(models.Message, {
+         foreignKey:'receiverId',
+         as:'receivedMessages',
+       });
     }
   }
   User.init(
@@ -75,7 +91,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-
+     subscriptionId: {
+        type: DataTypes.INTEGER,
+       allowNull: true,
+      references: {
+        model: 'UserSubscriptions',
+        key: 'id',
+       },
+      },
       isPasswordChanged: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

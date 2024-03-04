@@ -58,6 +58,10 @@ const sendEmail = async (type, subject, data) => {
       case 'CreatedReview':
         returnMessage = `A trip request email has been sent to ${data.email}.`;
         break;
+      case 'SubscriptionActivated':
+        returnMessage = `subscription has been successfully activated! to ${data.email} `;
+        break;
+        break;
       default:
         returnMessage = `An email has been sent to ${data.email}.`;
     }

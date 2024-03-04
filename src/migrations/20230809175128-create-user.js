@@ -51,6 +51,14 @@ module.exports = {
         allowNull: false,
         defaultValue: false,
       },
+      subscriptionId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: 'UserSubscriptions',
+          key: 'id',
+        },
+      },
       deletedAt: {
         allowNull: true,
         type: Sequelize.DATE,

@@ -3783,3 +3783,171 @@
 2024-03-02 01:00:53 info: Notification created successfully
 2024-03-02 01:00:56 info: Sent email to fistonalvin@gmail.com successfully.
 2024-03-02 01:00:56 info: Message sent: A trip request email has been sent to fistonalvin@gmail.com.
+2024-03-02 01:02:58 warn: No notifications found for the user
+2024-03-02 01:03:16 info: Notifications retrieved successfully
+2024-03-04 09:57:18 info: Server listening on port : 8080
+2024-03-04 09:57:18 info: DB connected successfully
+2024-03-04 10:05:16 info: Server listening on port : 8080
+2024-03-04 10:05:16 info: DB connected successfully
+2024-03-04 10:14:41 info: Server listening on port : 8080
+2024-03-04 10:14:41 info: DB connected successfully
+2024-03-04 10:14:45 info: Server listening on port : 8080
+2024-03-04 10:14:45 info: DB connected successfully
+2024-03-04 10:14:49 info: Server listening on port : 8080
+2024-03-04 10:14:49 info: DB connected successfully
+2024-03-04 10:14:50 info: Server listening on port : 8080
+2024-03-04 10:14:50 info: DB connected successfully
+2024-03-04 10:15:49 info: Server listening on port : 8080
+2024-03-04 10:15:49 info: DB connected successfully
+2024-03-04 10:15:56 info: Server listening on port : 8080
+2024-03-04 10:15:56 info: DB connected successfully
+2024-03-04 10:15:58 info: Server listening on port : 8080
+2024-03-04 10:15:58 info: DB connected successfully
+2024-03-04 10:17:04 info: Server listening on port : 8080
+2024-03-04 10:17:04 info: DB connected successfully
+2024-03-04 10:17:10 info: Server listening on port : 8080
+2024-03-04 10:17:10 info: DB connected successfully
+2024-03-04 10:19:53 info: Server listening on port : 8080
+2024-03-04 10:19:53 info: DB connected successfully
+2024-03-04 10:19:55 info: Server listening on port : 8080
+2024-03-04 10:19:55 info: DB connected successfully
+2024-03-04 10:20:15 info: Server listening on port : 8080
+2024-03-04 10:20:15 info: DB connected successfully
+2024-03-04 10:20:26 info: Server listening on port : 8080
+2024-03-04 10:20:26 info: DB connected successfully
+2024-03-04 10:20:38 info: Server listening on port : 8080
+2024-03-04 10:20:38 info: DB connected successfully
+2024-03-04 10:23:06 info: Server listening on port : 8080
+2024-03-04 10:23:06 info: DB connected successfully
+2024-03-04 10:37:41 info: Server listening on port : 8080
+2024-03-04 10:37:41 info: DB connected successfully
+2024-03-04 10:37:44 info: Server listening on port : 8080
+2024-03-04 10:37:44 info: DB connected successfully
+2024-03-04 10:40:37 info: Server listening on port : 8080
+2024-03-04 10:40:37 info: DB connected successfully
+2024-03-04 10:42:04 info: Server listening on port : 8080
+2024-03-04 10:42:04 info: DB connected successfully
+2024-03-04 10:42:17 info: Server listening on port : 8080
+2024-03-04 10:42:17 info: DB connected successfully
+2024-03-04 10:42:19 info: Server listening on port : 8080
+2024-03-04 10:42:19 info: DB connected successfully
+2024-03-04 10:42:42 info: Server listening on port : 8080
+2024-03-04 10:42:42 info: DB connected successfully
+2024-03-04 10:42:52 info: Server listening on port : 8080
+2024-03-04 10:42:52 info: DB connected successfully
+2024-03-04 10:43:01 info: Server listening on port : 8080
+2024-03-04 10:43:01 info: DB connected successfully
+2024-03-04 10:43:14 info: Server listening on port : 8080
+2024-03-04 10:43:14 info: DB connected successfully
+2024-03-04 10:44:28 info: Server listening on port : 8080
+2024-03-04 10:44:28 info: DB connected successfully
+2024-03-04 10:44:33 info: Server listening on port : 8080
+2024-03-04 10:44:33 info: DB connected successfully
+2024-03-04 10:44:47 info: Server listening on port : 8080
+2024-03-04 10:44:47 info: DB connected successfully
+2024-03-04 10:45:08 info: Server listening on port : 8080
+2024-03-04 10:45:08 info: DB connected successfully
+2024-03-04 10:45:10 info: Server listening on port : 8080
+2024-03-04 10:45:10 info: DB connected successfully
+2024-03-04 10:45:20 info: Server listening on port : 8080
+2024-03-04 10:45:20 info: DB connected successfully
+2024-03-04 10:45:33 info: Server listening on port : 8080
+2024-03-04 10:45:33 info: DB connected successfully
+2024-03-04 10:45:36 info: Server listening on port : 8080
+2024-03-04 10:45:36 info: DB connected successfully
+2024-03-04 10:45:40 info: Server listening on port : 8080
+2024-03-04 10:45:40 info: DB connected successfully
+2024-03-04 10:45:43 info: Server listening on port : 8080
+2024-03-04 10:45:43 info: DB connected successfully
+2024-03-04 10:45:45 info: Server listening on port : 8080
+2024-03-04 10:45:45 info: DB connected successfully
+2024-03-04 10:45:47 info: Server listening on port : 8080
+2024-03-04 10:45:47 info: DB connected successfully
+2024-03-04 10:45:50 info: Server listening on port : 8080
+2024-03-04 10:45:50 info: DB connected successfully
+2024-03-04 10:45:55 info: Server listening on port : 8080
+2024-03-04 10:45:55 info: DB connected successfully
+2024-03-04 10:46:01 info: Server listening on port : 8080
+2024-03-04 10:46:01 info: DB connected successfully
+2024-03-04 10:46:10 info: Server listening on port : 8080
+2024-03-04 10:46:10 info: DB connected successfully
+2024-03-04 10:46:12 info: Server listening on port : 8080
+2024-03-04 10:46:12 info: DB connected successfully
+2024-03-04 10:46:17 info: Server listening on port : 8080
+2024-03-04 10:46:17 info: DB connected successfully
+2024-03-04 10:46:20 info: Server listening on port : 8080
+2024-03-04 10:46:20 info: DB connected successfully
+2024-03-04 10:46:24 info: Server listening on port : 8080
+2024-03-04 10:46:24 info: DB connected successfully
+2024-03-04 10:46:25 info: Server listening on port : 8080
+2024-03-04 10:46:25 info: DB connected successfully
+2024-03-04 10:46:28 info: Server listening on port : 8080
+2024-03-04 10:46:28 info: DB connected successfully
+2024-03-04 10:46:36 info: Server listening on port : 8080
+2024-03-04 10:46:36 info: DB connected successfully
+2024-03-04 10:46:42 info: Server listening on port : 8080
+2024-03-04 10:46:42 info: DB connected successfully
+2024-03-04 10:47:26 info: Server listening on port : 8080
+2024-03-04 10:47:26 info: DB connected successfully
+2024-03-04 10:47:41 info: Server listening on port : 8080
+2024-03-04 10:47:41 info: DB connected successfully
+2024-03-04 10:47:42 info: Server listening on port : 8080
+2024-03-04 10:47:42 info: DB connected successfully
+2024-03-04 10:47:45 info: Server listening on port : 8080
+2024-03-04 10:47:45 info: DB connected successfully
+2024-03-04 10:47:54 info: Server listening on port : 8080
+2024-03-04 10:47:54 info: DB connected successfully
+2024-03-04 10:47:59 info: Server listening on port : 8080
+2024-03-04 10:47:59 info: DB connected successfully
+2024-03-04 11:28:48 info: Server listening on port : 8080
+2024-03-04 11:28:48 info: DB connected successfully
+2024-03-04 11:35:58 info: Server listening on port : 8080
+2024-03-04 11:35:58 info: DB connected successfully
+2024-03-04 11:35:59 info: Server listening on port : 8080
+2024-03-04 11:35:59 info: DB connected successfully
+2024-03-04 11:36:09 info: Server listening on port : 8080
+2024-03-04 11:36:09 info: DB connected successfully
+2024-03-04 11:36:22 info: Server listening on port : 8080
+2024-03-04 11:36:22 info: DB connected successfully
+2024-03-04 11:37:28 info: Server listening on port : 8080
+2024-03-04 11:37:28 info: DB connected successfully
+2024-03-04 11:37:29 info: Server listening on port : 8080
+2024-03-04 11:37:29 info: DB connected successfully
+2024-03-04 11:37:32 info: Server listening on port : 8080
+2024-03-04 11:37:32 info: DB connected successfully
+2024-03-04 11:37:34 info: Server listening on port : 8080
+2024-03-04 11:37:34 info: DB connected successfully
+2024-03-04 11:37:50 info: Server listening on port : 8080
+2024-03-04 11:37:50 info: DB connected successfully
+2024-03-04 11:37:51 info: Server listening on port : 8080
+2024-03-04 11:37:51 info: DB connected successfully
+2024-03-04 11:37:58 info: Server listening on port : 8080
+2024-03-04 11:37:58 info: DB connected successfully
+2024-03-04 11:38:01 info: Server listening on port : 8080
+2024-03-04 11:38:01 info: DB connected successfully
+2024-03-04 11:38:38 info: Server listening on port : 8080
+2024-03-04 11:38:38 info: DB connected successfully
+2024-03-04 11:39:28 info: Server listening on port : 8080
+2024-03-04 11:39:28 info: DB connected successfully
+2024-03-04 11:39:51 info: Server listening on port : 8080
+2024-03-04 11:39:51 info: DB connected successfully
+2024-03-04 11:39:55 info: Server listening on port : 8080
+2024-03-04 11:39:55 info: DB connected successfully
+2024-03-04 11:39:58 info: Server listening on port : 8080
+2024-03-04 11:39:58 info: DB connected successfully
+2024-03-04 11:40:51 info: Server listening on port : 8080
+2024-03-04 11:40:51 info: DB connected successfully
+2024-03-04 15:13:53 info: Server listening on port : 8080
+2024-03-04 15:13:53 info: DB connected successfully
+2024-03-04 15:21:16 info: Server listening on port : 8080
+2024-03-04 15:21:16 info: DB connected successfully
+2024-03-04 15:21:20 info: Server listening on port : 8080
+2024-03-04 15:21:20 info: DB connected successfully
+2024-03-04 15:21:25 info: Server listening on port : 8080
+2024-03-04 15:21:25 info: DB connected successfully
+2024-03-04 15:21:27 info: Server listening on port : 8080
+2024-03-04 15:21:27 info: DB connected successfully
+2024-03-04 15:21:53 info: Server listening on port : 8080
+2024-03-04 15:21:53 info: DB connected successfully
+2024-03-04 16:03:20 info: Server listening on port : 8080
+2024-03-04 16:03:20 info: DB connected successfully

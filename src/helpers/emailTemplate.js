@@ -247,7 +247,26 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
         },
       };
       break;
-
+    case 'SubscriptionActivated':
+      emailContent = {
+        body: {
+          name: data.fname,
+          intro:
+            'Your subscription has been successfully activated! 🚗✨ You can now enjoy full access to our platform and start offering rides or find trips to join. Safe travels!',
+          action: {
+            instructions:
+              'To get started with RwandaRideShare, please click here:',
+            button: {
+              color: '#007bff',
+              text: 'Confirm your account',
+              link: 'https://www.RwandaRideShare.com/',
+            },
+          },
+          outro:
+            "Need help, or have questions? Just reply to this email, we'd love to help.",
+        },
+      };
+      break;
     default:
       // Default template
       emailContent = {

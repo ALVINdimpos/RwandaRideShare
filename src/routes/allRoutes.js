@@ -11,6 +11,7 @@ const bookingsRoutes = require('./bookingRoutes');
 const reviewsRoutes = require('./reviewRoutes');
 const requestsRoutes = require('./requestRoutes');
 const notificationsRoutes = require('./notificationRoutes');
+const subscriptionRoutes = require('./subscriptionRoutes');
 // router instance
 const router = express.Router();
 
@@ -25,6 +26,7 @@ router.use('/bookings', bookingsRoutes);
 router.use('/reviews', reviewsRoutes);
 router.use('/requests', requestsRoutes);
 router.use('/notifications', notificationsRoutes);
+router.use('/subscriptions', subscriptionRoutes);
 
 // export
 module.exports = router;
