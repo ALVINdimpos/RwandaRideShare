@@ -7,7 +7,7 @@ const socketIO = require('socket.io'); // Add this line
 const { sequelize } = require('./models');
 const routes = require('./routes/allRoutes');
 const logger = require('../loggerConfigs');
-const cron = require('./cron/subscriptionCron');
+const  checkSubscriptionEndDates  = require('./cron/subscriptionCron');
 const { authenticateUser } = require('./middleware/authenticateUser');
 
 config();
@@ -23,7 +23,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
+checkSubscriptionEndDates.start();
 
 // all routes
 app.use(

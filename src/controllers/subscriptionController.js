@@ -1,4 +1,4 @@
-const { User, UserSubscription } = require('../models');
+const { User, Subscription } = require('../models');
 const { Op } = require('sequelize');
 const { createNotification } = require('../helpers/notifications');
 const sendEmail = require('../helpers/sendEmail');
@@ -36,7 +36,7 @@ const addSubscription = async (req, res) => {
       });
     }
     // Check if the user has already a subscription
-    const subscriptionExists = await UserSubscription.findOne({
+    const subscriptionExists = await Subscription.findOne({
       where: { userId },
     });
 
@@ -55,7 +55,7 @@ const addSubscription = async (req, res) => {
     };
 
     // Create the new subscription
-    const newSubscription = await UserSubscription.create(subscriptionData);
+    const newSubscription = await Subscription.create(subscriptionData);
     logger.info(`Adding subscription: subscription created successfully`);
     // Send a notification to the user
     createNotification(
@@ -93,7 +93,7 @@ const addSubscription = async (req, res) => {
 // Retrieve subscriptions
 const getSubscriptions = async (req, res) => {
   try {
-    const subscriptions = await UserSubscription.findAll({
+    const subscriptions = await Subscription.findAll({
       order: [['createdAt', 'DESC']],
       include: [
         {
@@ -124,7 +124,7 @@ const getOneSubscription = async (req, res) => {
 
   try {
     // Check if the subscription exists
-    const subscription = await UserSubscription.findByPk(id);
+    const subscription = await Subscription.findByPk(id);
 
     if (!subscription) {
       logger.error(
@@ -155,7 +155,7 @@ const getOneSubscription = async (req, res) => {
 const updateSubscription = async (req, res) => {
   try {
     const { id } = req.params;
-    const { levelId, startDate, endDate } = req.body;
+    const {userId, startDate, endDate } = req.body;
 
     // Check if the subscription exists
     const subscription = await Subscription.findByPk(id);
@@ -170,7 +170,7 @@ const updateSubscription = async (req, res) => {
     }
 
     // Update fields if provided
-    if (levelId) subscription.levelId = levelId;
+    if (userId) subscription.userId = userId;
     if (startDate) subscription.startDate = startDate;
     if (endDate) subscription.endDate = endDate;
 
@@ -196,7 +196,7 @@ const deleteSubscription = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const subscription = await UserSubscription.findByPk(id);
+    const subscription = await Subscription.findByPk(id);
 
     if (!subscription) {
       logger.error(

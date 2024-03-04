@@ -1,14 +1,14 @@
 const cron = require('node-cron');
 const { Op } = require('sequelize');
-const { UserSubscription, User } = require('../models');
+const { Subscription, User } = require('../models');
 const { createNotification } = require('../helpers/notifications');
 const logger = require('../../loggerConfigs');
 const sendEmail = require('../helpers/sendEmail');
 const { decryptData } = require('../utils');
 
-const checkSubscriptionEndDates = async () => {
+const checkSubscriptionEndDates = cron.schedule('0 0 * * *', async () => {
   try {
-    const subscriptionsToExpire = await UserSubscription.findAll({
+    const subscriptionsToExpire = await Subscription.findAll({
       where: {
         endDate: {
           [Op.lt]: new Date(),
@@ -48,7 +48,7 @@ const checkSubscriptionEndDates = async () => {
       );
 
       // Update subscription status to 'Expired'
-      await UserSubscription.update(
+      await Subscription.update(
         { status: 'Expired' },
         {
           where: {
@@ -63,11 +63,6 @@ const checkSubscriptionEndDates = async () => {
   } catch (error) {
     logger.error(error);
   }
-};
-
-// Schedule the cron job to run every day at a specific time (e.g., midnight)
-cron.schedule('0 0 * * *', () => {
-  checkSubscriptionEndDates();
 });
 
-module.exports = cron;
+module.exports = checkSubscriptionEndDates;

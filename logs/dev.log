@@ -3951,3 +3951,211 @@
 2024-03-04 15:21:53 info: DB connected successfully
 2024-03-04 16:03:20 info: Server listening on port : 8080
 2024-03-04 16:03:20 info: DB connected successfully
+2024-03-04 16:06:47 info: Server listening on port : 8080
+2024-03-04 16:06:47 info: DB connected successfully
+2024-03-04 16:06:59 info: Server listening on port : 8080
+2024-03-04 16:06:59 info: DB connected successfully
+2024-03-04 16:10:07 info: Server listening on port : 8080
+2024-03-04 16:10:07 info: DB connected successfully
+2024-03-04 16:10:08 info: Server listening on port : 8080
+2024-03-04 16:10:08 info: DB connected successfully
+2024-03-04 16:11:35 info: Server listening on port : 8080
+2024-03-04 16:11:35 info: DB connected successfully
+2024-03-04 16:11:39 info: Server listening on port : 8080
+2024-03-04 16:11:39 info: DB connected successfully
+2024-03-04 16:11:51 info: Server listening on port : 8080
+2024-03-04 16:11:51 info: DB connected successfully
+2024-03-04 16:11:53 info: Server listening on port : 8080
+2024-03-04 16:11:53 info: DB connected successfully
+2024-03-04 16:13:26 info: Server listening on port : 8080
+2024-03-04 16:13:26 info: DB connected successfully
+2024-03-04 16:13:27 info: Server listening on port : 8080
+2024-03-04 16:13:27 info: DB connected successfully
+2024-03-04 16:13:34 info: Server listening on port : 8080
+2024-03-04 16:13:35 info: DB connected successfully
+2024-03-04 16:13:36 info: Server listening on port : 8080
+2024-03-04 16:13:36 info: DB connected successfully
+2024-03-04 16:13:39 info: Server listening on port : 8080
+2024-03-04 16:13:39 info: DB connected successfully
+2024-03-04 16:13:41 info: Server listening on port : 8080
+2024-03-04 16:13:41 info: DB connected successfully
+2024-03-04 16:13:43 info: Server listening on port : 8080
+2024-03-04 16:13:43 info: DB connected successfully
+2024-03-04 16:13:46 info: Server listening on port : 8080
+2024-03-04 16:13:46 info: DB connected successfully
+2024-03-04 16:13:48 info: Server listening on port : 8080
+2024-03-04 16:13:48 info: DB connected successfully
+2024-03-04 16:13:52 info: Server listening on port : 8080
+2024-03-04 16:13:52 info: DB connected successfully
+2024-03-04 16:14:24 info: Server listening on port : 8080
+2024-03-04 16:14:24 info: DB connected successfully
+2024-03-04 16:15:06 info: Server listening on port : 8080
+2024-03-04 16:15:06 info: DB connected successfully
+2024-03-04 16:15:07 info: Server listening on port : 8080
+2024-03-04 16:15:07 info: DB connected successfully
+2024-03-04 16:16:51 info: Server listening on port : 8080
+2024-03-04 16:16:51 info: DB connected successfully
+2024-03-04 16:18:30 info: Server listening on port : 8080
+2024-03-04 16:18:30 info: DB connected successfully
+2024-03-04 16:31:35 info: Server listening on port : 8080
+2024-03-04 16:31:35 info: DB connected successfully
+2024-03-04 16:59:32 info: Server listening on port : 8080
+2024-03-04 16:59:32 info: DB connected successfully
+2024-03-04 16:59:51 info: Server listening on port : 8080
+2024-03-04 16:59:51 info: DB connected successfully
+2024-03-04 17:00:08 info: Server listening on port : 8080
+2024-03-04 17:00:08 info: DB connected successfully
+2024-03-04 17:00:18 info: Server listening on port : 8080
+2024-03-04 17:00:18 info: DB connected successfully
+2024-03-04 17:01:02 info: Server listening on port : 8080
+2024-03-04 17:01:02 info: DB connected successfully
+2024-03-04 17:01:06 info: Server listening on port : 8080
+2024-03-04 17:01:06 info: DB connected successfully
+2024-03-04 17:01:40 info: Server listening on port : 8080
+2024-03-04 17:01:40 info: DB connected successfully
+2024-03-04 17:01:49 info: Server listening on port : 8080
+2024-03-04 17:01:49 info: DB connected successfully
+2024-03-04 17:02:16 info: Server listening on port : 8080
+2024-03-04 17:02:16 info: DB connected successfully
+2024-03-04 17:02:19 info: Server listening on port : 8080
+2024-03-04 17:02:19 info: DB connected successfully
+2024-03-04 17:10:28 info: Server listening on port : 8080
+2024-03-04 17:10:28 info: DB connected successfully
+2024-03-04 17:10:54 info: Server listening on port : 8080
+2024-03-04 17:10:54 info: DB connected successfully
+2024-03-04 17:11:20 info: Server listening on port : 8080
+2024-03-04 17:11:20 info: DB connected successfully
+2024-03-04 17:12:15 info: Server listening on port : 8080
+2024-03-04 17:12:15 info: DB connected successfully
+2024-03-04 17:12:26 info: Server listening on port : 8080
+2024-03-04 17:12:26 info: DB connected successfully
+2024-03-04 17:12:40 info: Server listening on port : 8080
+2024-03-04 17:12:40 info: DB connected successfully
+2024-03-04 17:12:48 info: Server listening on port : 8080
+2024-03-04 17:12:48 info: DB connected successfully
+2024-03-04 17:13:14 info: Server listening on port : 8080
+2024-03-04 17:13:14 info: DB connected successfully
+2024-03-04 17:21:50 error: Adding Subscription: User with ID 1 not found
+2024-03-04 17:23:04 error: Adding a user: Unexpected end of JSON input
+2024-03-04 17:23:04 info: Notification created successfully
+2024-03-04 17:23:55 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 18:39:31 info: Server listening on port : 8080
+2024-03-04 18:39:31 info: DB connected successfully
+2024-03-04 18:41:07 info: Server listening on port : 8080
+2024-03-04 18:41:07 info: DB connected successfully
+2024-03-04 18:41:12 error: Adding a user: Unexpected end of JSON input
+2024-03-04 18:41:12 info: Notification created successfully
+2024-03-04 18:41:39 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 18:41:58 error: Login-email: Invalid credentials from alvindimpos@gmail.com
+2024-03-04 18:42:25 error: Adding a user: Unexpected end of JSON input
+2024-03-04 18:42:44 error: Adding a user: Unexpected end of JSON input
+2024-03-04 18:44:50 info: Server listening on port : 8080
+2024-03-04 18:44:50 info: DB connected successfully
+2024-03-04 18:45:05 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 18:45:07 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 18:50:12 info: Server listening on port : 8080
+2024-03-04 18:50:12 info: DB connected successfully
+2024-03-04 18:50:15 error: Adding  user: Unexpected end of JSON input
+2024-03-04 18:50:15 info: Notification created successfully
+2024-03-04 18:52:06 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 18:53:04 error: Login-pw: Invalid credentials from niyigenafistonalvin@gmail.com
+2024-03-04 18:53:36 error: Login-pw: Invalid credentials from niyigenafistonalvin@gmail.com
+2024-03-04 20:49:13 error: Adding User: User with email: niyigenafistonalvin@gmail.com exists
+2024-03-04 20:49:43 error: Adding  user: Unexpected end of JSON input
+2024-03-04 20:49:54 error: Adding User: User with email: alvindimpos@gmail.com exists
+2024-03-04 20:52:11 error: Adding  user: Unexpected end of JSON input
+2024-03-04 20:54:09 info: Server listening on port : 8080
+2024-03-04 20:54:09 info: DB connected successfully
+2024-03-04 20:54:13 error: Adding User: User with email: alvin@adminatete.com exists
+2024-03-04 20:54:36 info: Server listening on port : 8080
+2024-03-04 20:54:36 info: DB connected successfully
+2024-03-04 20:54:37 info: Server listening on port : 8080
+2024-03-04 20:54:37 info: DB connected successfully
+2024-03-04 20:54:43 info: Server listening on port : 8080
+2024-03-04 20:54:43 info: DB connected successfully
+2024-03-04 20:54:46 error: Adding User: User with email: alvin@adminatete.com exists
+2024-03-04 20:55:09 info: Server listening on port : 8080
+2024-03-04 20:55:09 info: DB connected successfully
+2024-03-04 21:34:36 info: Adding subscription: subscription created successfully
+2024-03-04 21:34:36 error: Error sending email to undefined.
+2024-03-04 21:34:36 error: Error sending email : fname is not defined
+2024-03-04 21:34:36 info: Notification created successfully
+2024-03-04 21:34:38 error: Error sending email to U2FsdGVkX183FmbiNZbqvdsH93NcTBcahjFHaMNMIpCfRL+rt+d0kYbp7HXbDg+i.
+2024-03-04 21:34:38 error: Error sending email : No recipients defined
+2024-03-04 21:36:57 info: Server listening on port : 8080
+2024-03-04 21:36:57 info: DB connected successfully
+2024-03-04 21:36:59 info: Server listening on port : 8080
+2024-03-04 21:36:59 info: DB connected successfully
+2024-03-04 21:37:09 info: Server listening on port : 8080
+2024-03-04 21:37:09 info: DB connected successfully
+2024-03-04 21:37:12 info: Server listening on port : 8080
+2024-03-04 21:37:12 info: DB connected successfully
+2024-03-04 21:37:14 info: Server listening on port : 8080
+2024-03-04 21:37:14 info: DB connected successfully
+2024-03-04 21:37:19 info: Server listening on port : 8080
+2024-03-04 21:37:19 info: DB connected successfully
+2024-03-04 21:50:41 info: Server listening on port : 8080
+2024-03-04 21:50:41 info: DB connected successfully
+2024-03-04 21:50:53 info: Server listening on port : 8080
+2024-03-04 21:50:53 info: DB connected successfully
+2024-03-04 21:50:57 info: Server listening on port : 8080
+2024-03-04 21:50:57 info: DB connected successfully
+2024-03-04 21:51:19 info: Server listening on port : 8080
+2024-03-04 21:51:19 info: DB connected successfully
+2024-03-04 21:51:20 info: Server listening on port : 8080
+2024-03-04 21:51:20 info: DB connected successfully
+2024-03-04 21:52:39 info: Server listening on port : 8080
+2024-03-04 21:52:39 info: DB connected successfully
+2024-03-04 21:54:18 info: Server listening on port : 8080
+2024-03-04 21:54:18 info: DB connected successfully
+2024-03-04 21:54:24 info: Server listening on port : 8080
+2024-03-04 21:54:24 info: DB connected successfully
+2024-03-04 21:54:25 info: Server listening on port : 8080
+2024-03-04 21:54:25 info: DB connected successfully
+2024-03-04 21:55:13 info: Server listening on port : 8080
+2024-03-04 21:55:13 info: DB connected successfully
+2024-03-04 21:55:15 info: Server listening on port : 8080
+2024-03-04 21:55:15 info: DB connected successfully
+2024-03-04 21:55:16 info: Subscription end dates checked successfully
+2024-03-04 21:55:17 info: Subscription end dates checked successfully
+2024-03-04 21:55:18 info: Subscription end dates checked successfully
+2024-03-04 21:55:19 info: Subscription end dates checked successfully
+2024-03-04 21:55:20 info: Subscription end dates checked successfully
+2024-03-04 21:55:21 info: Subscription end dates checked successfully
+2024-03-04 21:55:22 info: Subscription end dates checked successfully
+2024-03-04 21:55:23 info: Subscription end dates checked successfully
+2024-03-04 21:55:24 info: Subscription end dates checked successfully
+2024-03-04 21:55:25 info: Subscription end dates checked successfully
+2024-03-04 21:55:26 info: Subscription end dates checked successfully
+2024-03-04 21:55:27 info: Subscription end dates checked successfully
+2024-03-04 21:55:28 info: Subscription end dates checked successfully
+2024-03-04 21:55:29 info: Subscription end dates checked successfully
+2024-03-04 21:55:30 info: Subscription end dates checked successfully
+2024-03-04 21:55:31 info: Subscription end dates checked successfully
+2024-03-04 21:55:32 info: Subscription end dates checked successfully
+2024-03-04 21:55:33 info: Subscription end dates checked successfully
+2024-03-04 21:55:34 info: Subscription end dates checked successfully
+2024-03-04 21:55:35 info: Subscription end dates checked successfully
+2024-03-04 21:55:36 info: Subscription end dates checked successfully
+2024-03-04 21:55:37 info: Subscription end dates checked successfully
+2024-03-04 21:55:38 info: Subscription end dates checked successfully
+2024-03-04 21:55:39 info: Subscription end dates checked successfully
+2024-03-04 21:55:40 info: Subscription end dates checked successfully
+2024-03-04 21:55:41 info: Subscription end dates checked successfully
+2024-03-04 21:55:42 info: Subscription end dates checked successfully
+2024-03-04 21:55:43 info: Subscription end dates checked successfully
+2024-03-04 21:55:44 info: Subscription end dates checked successfully
+2024-03-04 21:55:45 info: Subscription end dates checked successfully
+2024-03-04 21:55:46 info: Subscription end dates checked successfully
+2024-03-04 21:55:47 info: Subscription end dates checked successfully
+2024-03-04 21:55:48 info: Subscription end dates checked successfully
+2024-03-04 21:55:49 info: Subscription end dates checked successfully
+2024-03-04 21:55:50 info: Server listening on port : 8080
+2024-03-04 21:55:50 info: DB connected successfully
+2024-03-04 21:55:53 info: Server listening on port : 8080
+2024-03-04 21:55:53 info: DB connected successfully
+2024-03-04 21:56:13 info: Server listening on port : 8080
+2024-03-04 21:56:13 info: DB connected successfully
+2024-03-04 21:56:31 error: JWT verification error: jwt expired
+2024-03-04 21:56:46 warn: No notifications found for the user
+2024-03-04 21:57:25 warn: No notifications found for the user

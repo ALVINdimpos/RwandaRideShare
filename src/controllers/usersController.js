@@ -20,7 +20,6 @@ const {
 const addUser = async (req, res) => {
   try {
     const { fname, lname, email, roleId, password, phone } = req.body;
-
     const requiredFields = [
       'fname',
       'lname',
@@ -87,7 +86,6 @@ const addUser = async (req, res) => {
         message: 'Role not found',
       });
     }
-
     const encryptedUserData = {
       fname: encryptData(fname),
       lname: encryptData(lname),
@@ -121,7 +119,8 @@ const addUser = async (req, res) => {
       });
     } else {
       sendEmail(
-        'passengerCreated','RwandaRideShare - Passenger Account Created',
+        'passengerCreated',
+        'RwandaRideShare - Passenger Account Created',
         {
           email: decryptData(email),
           fname: decryptData(fname),
@@ -142,7 +141,7 @@ const addUser = async (req, res) => {
       data: user,
     });
   } catch (error) {
-    logger.error(`Adding a user: ${error.message}`);
+    logger.error(`Adding  user: ${error.message}`);
     return res.status(500).json({
       ok: false,
       message: 'An error occurred while adding the user.',
@@ -349,7 +348,7 @@ const forgotPassword = async (req, res) => {
     });
 
     sendEmail('ResetPassword', 'RwandaRideShare - Reset Your Password', {
-      email : decryptData(user.email),
+      email: decryptData(user.email),
       fname: decryptData(user.fname),
       lname: user.lname,
       token,
