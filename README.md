@@ -1,9 +1,9 @@
-# EasyGoRwanda: Simplifying Travel and Transportation in Rwanda Backend API
+# EazyGoRwanda: Simplifying Travel and Transportation in Rwanda Backend API
 
 Welcome to EasyGoRwanda, your all-in-one platform for seamless travel and transportation experiences in Rwanda. We aim to simplify and enhance the way you navigate through the beautiful landscapes of Rwanda, ensuring a smooth and convenient journey.
 
 ## Table of Contents
-- [EasyGoRwanda: Simplifying Travel and Transportation in Rwanda Backend API](#easygorwanda-simplifying-travel-and-transportation-in-rwanda-backend-api)
+- [EazyGoRwanda: Simplifying Travel and Transportation in Rwanda Backend API](#eazygorwanda-simplifying-travel-and-transportation-in-rwanda-backend-api)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Features](#features)
