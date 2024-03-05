@@ -109,10 +109,10 @@ const addUser = async (req, res) => {
     if (role.nameIndex === hashData('Driver')) {
       createNotification(
         user.id,
-        'Hello there! Thank you for creating a driver account with RwandaRideShare. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
+        'Hello there! Thank you for creating a driver account with EazyGoRwanda. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
         'Account Created'
       );
-      sendEmail('driverCreated', 'RwandaRideShare - Driver Account Created', {
+      sendEmail('driverCreated', 'EazyGoRwanda - Driver Account Created', {
         email: decryptData(email),
         fname: decryptData(fname),
         lname,
@@ -120,7 +120,7 @@ const addUser = async (req, res) => {
     } else {
       sendEmail(
         'passengerCreated',
-        'RwandaRideShare - Passenger Account Created',
+        'EazyGoRwanda - Passenger Account Created',
         {
           email: decryptData(email),
           fname: decryptData(fname),
@@ -130,7 +130,7 @@ const addUser = async (req, res) => {
 
       createNotification(
         user.id,
-        'Welcome to RwandaRideShare! You have successfully created a passenger account. Enjoy your journey with us!',
+        'Welcome to EazyGoRwanda! You have successfully created a passenger account. Enjoy your journey with us!',
         'Account Created'
       );
     }
@@ -347,7 +347,7 @@ const forgotPassword = async (req, res) => {
       expiresAt: new Date(Date.now() + 3600000),
     });
 
-    sendEmail('ResetPassword', 'RwandaRideShare - Reset Your Password', {
+    sendEmail('ResetPassword', 'EazyGoRwanda - Reset Your Password', {
       email: decryptData(user.email),
       fname: decryptData(user.fname),
       lname: user.lname,
@@ -438,7 +438,7 @@ const approveUserIfIsDriver = async (req, res) => {
       // Log success
       logger.info(`User with ID ${id} approved successfully`);
       // Send email to the user
-      sendEmail('driverApproved', 'RwandaRideShare - Driver Account Approved', {
+      sendEmail('driverApproved', 'EazyGoRwanda - Driver Account Approved', {
         email: decryptData(user.email),
         fname: decryptData(user.fname),
         lname: user.lname,

@@ -1,7 +1,7 @@
 {
-  "name": "api.rwandarideshare.v1.0.0",
+  "name": "api.EazyGoRwanda.v1.0.0",
   "version": "2.0.0",
-  "description": "RwandaRideShare App APIs",
+  "description": "EazyGoRwanda App APIs",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon src/server.js",

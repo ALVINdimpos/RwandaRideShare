@@ -68,8 +68,8 @@ const createRequest = async (req, res) => {
     const drivers = allDrivers.filter(user =>
       user.roles.some(role => role.nameIndex === hashRole)
     );
-    
-     const notificationMessage = `New ride request from ${user.fname} ${user.lname}:
+
+    const notificationMessage = `New ride request from ${user.fname} ${user.lname}:
       - Origin: ${Origin}
       - Destination: ${Destination}
       - Travel Date: ${TravelDate}
@@ -77,25 +77,25 @@ const createRequest = async (req, res) => {
       - Description: ${Description}`;
     // find user
 
-     // Notify only drivers about the new request
-     for (const driverToNotify of drivers) {
-       await createNotification(
-         driverToNotify.id,
-         notificationMessage,
-         'Request'
-       );
-       // Send email to the user
-       sendEmail('tripRequest', 'RwandaRideShare - New ride request', {
-         email: decryptData(driverToNotify.email),
-         fname: decryptData(user.fname),
-         lname: user.lname,
-         origin: Origin,
-         destination: Destination,
-         travelDate: TravelDate,
-         seatsRequired: SeatsRequired,
-         description: Description,
-       });
-     }
+    // Notify only drivers about the new request
+    for (const driverToNotify of drivers) {
+      await createNotification(
+        driverToNotify.id,
+        notificationMessage,
+        'Request'
+      );
+      // Send email to the user
+      sendEmail('tripRequest', 'EazyGoRwanda - New ride request', {
+        email: decryptData(driverToNotify.email),
+        fname: decryptData(user.fname),
+        lname: user.lname,
+        origin: Origin,
+        destination: Destination,
+        travelDate: TravelDate,
+        seatsRequired: SeatsRequired,
+        description: Description,
+      });
+    }
     return res.status(201).json({
       ok: true,
       message: 'Request successfully created',
@@ -251,7 +251,8 @@ const takeAndApproveRequest = async (req, res) => {
     );
 
     // Decrement the AvailableSeats in the corresponding trip
-    const updatedAvailableSeats = matchingTrip.AvailableSeats - request.SeatsRequired;
+    const updatedAvailableSeats =
+      matchingTrip.AvailableSeats - request.SeatsRequired;
     await Trips.update(
       { AvailableSeats: updatedAvailableSeats },
       {
@@ -293,7 +294,6 @@ const takeAndApproveRequest = async (req, res) => {
     });
   }
 };
-
 
 module.exports = {
   createRequest,

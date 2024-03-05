@@ -1,9 +1,9 @@
-# RwandaRideShare Backend API
+# EazyGoRwanda Backend API
 
-Welcome to RwandaRideShare, your premier destination for convenient and sustainable transportation across the beautiful landscapes of Rwanda. At RwandaRideShare, we believe in fostering community, reducing carbon footprints, and making your journeys not just efficient but memorable.
+Welcome to EazyGoRwanda, your premier destination for convenient and sustainable transportation across the beautiful landscapes of Rwanda. At EazyGoRwanda, we believe in fostering community, reducing carbon footprints, and making your journeys not just efficient but memorable.
 
 ## Table of Contents
-- [RwandaRideShare Backend API](#rwandarideshare-backend-api)
+- [EazyGoRwanda Backend API](#eazygorwanda-backend-api)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Features](#features)
@@ -13,7 +13,7 @@ Welcome to RwandaRideShare, your premier destination for convenient and sustaina
 
 ## Installation
 
-To get started with RwandaRideShare backend, follow these steps:
+To get started with EazyGoRwanda backend, follow these steps:
 
 1. Clone the repository:
 
@@ -85,7 +85,7 @@ To get started with RwandaRideShare backend, follow these steps:
 
 ## Encryption
 
-All data exchanged through RwandaRideShare's backend API is end-to-end encrypted using the renowned library Crypto-JS with strong keys to ensure the highest level of security.
+All data exchanged through EazyGoRwanda's backend API is end-to-end encrypted using the renowned library Crypto-JS with strong keys to ensure the highest level of security.
 
 ## License
 
@@ -93,4 +93,4 @@ This project is licensed under the MIT License.
 
 ## Contact Information
 
-For any inquiries or support, please contact the RwandaRideShare team at [info@RwandaRideShare.com](mailto:info@RwandaRideShare.com).
+For any inquiries or support, please contact the EazyGoRwanda team at [info@EazyGoRwanda.com](mailto:info@EazyGoRwanda.com).

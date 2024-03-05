@@ -4,9 +4,9 @@ const Mailgen = require('mailgen');
 const mailGenerator = new Mailgen({
   theme: 'default',
   product: {
-    name: 'RwandaRideShare',
-    link: 'https://www.RwandaRideShare.com/',
-    logo: 'https://www.RwandaRideShare.com/static/media/Darklogo.aae7f3d7c12b50a5eea9.png',
+    name: 'EazyGoRwanda',
+    link: 'https://www.EazyGoRwanda.com/',
+    logo: 'https://www.EazyGoRwanda.com/static/media/Darklogo.aae7f3d7c12b50a5eea9.png',
     // Style the header with blue background and padding
     copyright: 'Copyright © 2024 Rwanda Share Ride LTD.',
   },
@@ -22,17 +22,17 @@ const generateEmail = (type, data) => {
         body: {
           name: data.fname,
           intro:
-            'You are receiving this email because you requested a password reset for your RwandaRideShare account.',
+            'You are receiving this email because you requested a password reset for your EazyGoRwanda account.',
           action: {
             instructions: 'Click the button below to reset your password:',
             button: {
               color: '#007bff',
               text: 'Reset your password',
-              link: `https://www.RwandaRideShare.com/auth/reset-password/${data.token}`,
+              link: `https://www.EazyGoRwanda.com/auth/reset-password/${data.token}`,
             },
           },
           outro:
-            'This password reset link will expire in 24 hours. If you did not request a password reset, no further action is required.<br><br>RwandaRideShare<br>Team.',
+            'This password reset link will expire in 24 hours. If you did not request a password reset, no further action is required.<br><br>EazyGoRwanda<br>Team.',
         },
       };
       break;
@@ -43,7 +43,7 @@ const generateEmail = (type, data) => {
           name: data.fname,
           intro: 'Thank you for subscribing to our news letters.',
           outro:
-            'You will be receiving different updates from us. For more information on RwandaRideShare please visit our <a href="https://www.RwandaRideShare.com/">website</a>',
+            'You will be receiving different updates from us. For more information on EazyGoRwanda please visit our <a href="https://www.EazyGoRwanda.com/">website</a>',
         },
       };
       break;
@@ -54,7 +54,7 @@ const generateEmail = (type, data) => {
           name: data.fname,
           intro: 'Thanks for reaching out to us',
           outro: `In case you don't hear from us soon, please contact us on <strong>
-                ${data.phone}</strong>. For more information on RwandaRideShare please visit our <a href="https://www.RwandaRideShare.com/">website</a>`,
+                ${data.phone}</strong>. For more information on EazyGoRwanda please visit our <a href="https://www.EazyGoRwanda.com/">website</a>`,
         },
       };
     case 'tripBooked':
@@ -75,7 +75,7 @@ Please ensure you and the passenger coordinate any additional details for a smoo
             button: {
               color: '#007bff',
               text: 'Approve',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -99,11 +99,11 @@ Please ensure you and the driver coordinate any additional details for a smooth 
           outro: `Your driver will pick you up at ${data.travelDate}}. Please be ready for a smooth journey. Safe travels!`,
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: '',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
         },
@@ -132,7 +132,7 @@ Please ensure you and the driver coordinate any additional details for a smooth 
             button: {
               color: '#007bff',
               text: 'Approve',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -144,21 +144,21 @@ Please ensure you and the driver coordinate any additional details for a smooth 
       emailContent = {
         body: {
           name: data.fname,
-          intro: `Great news! Your requested ride on RwandaRideShare has been approved. 🚗✨ You can now proceed with the journey and enjoy a comfortable ride.
+          intro: `Great news! Your requested ride on EazyGoRwanda has been approved. 🚗✨ You can now proceed with the journey and enjoy a comfortable ride.
 
 Here are the details:
 - Departure: ${data.origin}
 - Destination: ${data.destination}
 - Date and Time: ${data.travelDate}
 
-We hope you have a fantastic experience with RwandaRideShare. If you have any questions or need further assistance, feel free to reach out.`,
+We hope you have a fantastic experience with EazyGoRwanda. If you have any questions or need further assistance, feel free to reach out.`,
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -171,14 +171,14 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
         body: {
           name: data.fname,
           intro:
-            'Hello there! Thank you for creating a driver account with RwandaRideShare. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
+            'Hello there! Thank you for creating a driver account with EazyGoRwanda. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -191,14 +191,14 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
         body: {
           name: data.fname,
           intro:
-            'Welcome to RwandaRideShare! You have successfully created a passenger account. Enjoy your journey with us!',
+            'Welcome to EazyGoRwanda! You have successfully created a passenger account. Enjoy your journey with us!',
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -214,11 +214,11 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
             'Your driver account has been successfully approved! 🚗✨ You can now enjoy full access to our platform and start offering rides or find trips to join. Safe travels!',
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -235,11 +235,11 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
       - Comments: ${data.comment || 'No comments provided'}`,
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -255,11 +255,11 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
             'Your subscription has been successfully activated! 🚗✨ You can now enjoy full access to our platform and start offering rides or find trips to join. Safe travels!',
           action: {
             instructions:
-              'To get started with RwandaRideShare, please click here:',
+              'To get started with EazyGoRwanda, please click here:',
             button: {
               color: '#007bff',
               text: 'Confirm your account',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
@@ -273,13 +273,13 @@ We hope you have a fantastic experience with RwandaRideShare. If you have any qu
         body: {
           name: fname,
           intro:
-            'Welcome to RwandaRideShare! We’re very excited to have you on board.',
+            'Welcome to EazyGoRwanda! We’re very excited to have you on board.',
           action: {
             instructions: 'To approve, please click here:',
             button: {
               color: '#007bff',
               text: 'Approve',
-              link: 'https://www.RwandaRideShare.com/',
+              link: 'https://www.EazyGoRwanda.com/',
             },
           },
           outro:
