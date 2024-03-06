@@ -112,21 +112,31 @@ const addUser = async (req, res) => {
         'Hello there! Thank you for creating a driver account with EazyGoRwanda. Your account will be reviewed, and you will be notified once it is approved. Safe travels!',
         'Account Created'
       );
-      sendEmail('driverCreated', 'EazyGoRwanda - Driver Account Created', {
-        email: decryptData(email),
-        fname: decryptData(fname),
-        lname,
-      });
-    } else {
-      sendEmail(
-        'passengerCreated',
-        'EazyGoRwanda - Passenger Account Created',
-        {
+      try {
+        await sendEmail('driverCreated', 'EazyGoRwanda - Driver Account Created', {
           email: decryptData(email),
           fname: decryptData(fname),
           lname,
-        }
-      );
+        });
+      } catch (error) {
+        logger.error(`Sending email failed to: ` + email);
+      }
+
+    } else {
+      try {
+        await sendEmail(
+          'passengerCreated',
+          'EazyGoRwanda - Passenger Account Created',
+          {
+            email: decryptData(email),
+            fname: decryptData(fname),
+            lname,
+          }
+        );
+      } catch (error) {
+        logger.error(`Sending email failed to: ` + email);
+      }
+
 
       createNotification(
         user.id,

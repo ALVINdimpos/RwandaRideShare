@@ -4159,3 +4159,154 @@
 2024-03-04 21:56:31 error: JWT verification error: jwt expired
 2024-03-04 21:56:46 warn: No notifications found for the user
 2024-03-04 21:57:25 warn: No notifications found for the user
+2024-03-06 01:59:44 info: Server listening on port : 8080
+2024-03-06 01:59:44 info: DB connected successfully
+2024-03-06 02:20:59 info: Server listening on port : 8080
+2024-03-06 02:20:59 info: DB connected successfully
+2024-03-06 02:22:11 info: Server listening on port : 8080
+2024-03-06 02:22:11 info: DB connected successfully
+2024-03-06 02:38:46 info: Server listening on port : 8080
+2024-03-06 02:38:46 info: DB connected successfully
+2024-03-06 02:39:24 info: Server listening on port : 8080
+2024-03-06 02:39:24 info: DB connected successfully
+2024-03-06 02:40:00 info: Server listening on port : 8080
+2024-03-06 02:40:00 info: DB connected successfully
+2024-03-06 02:47:42 error: Adding  user: Cannot read properties of undefined (reading 'images')
+2024-03-06 02:53:55 error: Adding User: Required fields are missing: fname, lname, email, roleId, password, phone
+2024-03-06 02:54:16 error: Adding User: Required fields are missing: fname, lname, email, roleId, password, phone
+2024-03-06 02:55:47 error: Adding User: Required fields are missing: roleId, password
+2024-03-06 02:59:48 error: Adding User: Invalid password
+2024-03-06 03:00:01 error: Adding  user: Unexpected end of JSON input
+2024-03-06 03:03:58 error: Adding  user: Unexpected end of JSON input
+2024-03-06 03:03:58 info: Notification created successfully
+2024-03-06 03:05:45 error: Adding  user: Unexpected end of JSON input
+2024-03-06 03:07:34 info: Server listening on port : 8080
+2024-03-06 03:07:35 info: DB connected successfully
+2024-03-06 03:08:08 info: Notification created successfully
+2024-03-06 03:10:11 error: Adding  user: Unexpected end of JSON input
+2024-03-06 03:10:11 info: Notification created successfully
+2024-03-06 03:10:36 info: Notification created successfully
+2024-03-06 03:12:46 info: Server listening on port : 8080
+2024-03-06 03:12:46 info: DB connected successfully
+2024-03-06 03:12:49 error: Adding User: User with email: test3@gmail.com exists
+2024-03-06 03:12:59 info: Notification created successfully
+2024-03-06 03:16:32 info: Server listening on port : 8080
+2024-03-06 03:16:32 info: DB connected successfully
+2024-03-06 03:16:39 error: Sending email failed to: test9@gmail.com
+2024-03-06 03:16:39 info: Notification created successfully
+2024-03-06 03:19:56 error: Adding User:Required fields are missing:email, password
+2024-03-06 03:20:28 error: Adding User:Required fields are missing:password
+2024-03-06 03:25:59 info: Server listening on port : 8080
+2024-03-06 03:25:59 info: DB connected successfully
+2024-03-06 03:27:43 info: Server listening on port : 8080
+2024-03-06 03:27:43 info: DB connected successfully
+2024-03-06 03:27:50 info: Server listening on port : 8080
+2024-03-06 03:27:50 info: DB connected successfully
+2024-03-06 03:29:01 info: Server listening on port : 8080
+2024-03-06 03:29:01 info: DB connected successfully
+2024-03-06 03:29:34 info: Server listening on port : 8080
+2024-03-06 03:29:34 info: DB connected successfully
+2024-03-06 03:29:58 info: Server listening on port : 8080
+2024-03-06 03:29:58 info: DB connected successfully
+2024-03-06 03:31:14 info: Server listening on port : 8080
+2024-03-06 03:31:14 info: DB connected successfully
+2024-03-06 03:31:17 error: Error: decryptData: jwt is not defined
+    at decryptData (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:10:18)
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:16:27)
+    at Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:26)
+    at run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:124:19)
+    at Namespace.run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:135:9)
+    at Namespace._add (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:211:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:31:17 error: Error: authenticateUser: Cannot destructure property 'userId' of 'decoded' as it is null.
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:24:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:20)
+2024-03-06 03:32:35 info: Server listening on port : 8080
+2024-03-06 03:32:35 info: DB connected successfully
+2024-03-06 03:32:37 error: Error: decryptData: invalid algorithm
+    at decryptData (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:11:18)
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:17:27)
+    at Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:26)
+    at run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:124:19)
+    at Namespace.run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:135:9)
+    at Namespace._add (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:211:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:32:37 error: Error: authenticateUser: Cannot destructure property 'userId' of 'decoded' as it is null.
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:25:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:20)
+2024-03-06 03:47:45 info: Server listening on port : 8080
+2024-03-06 03:47:45 error: Error: db: connect ECONNREFUSED 127.0.0.1:3306
+    at dbCon (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:57:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:47:58 info: Server listening on port : 8080
+2024-03-06 03:47:58 error: Error: db: connect ECONNREFUSED 127.0.0.1:3306
+    at dbCon (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:57:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:48:02 error: Error: authenticateUser: fs is not defined
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:28:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:20)
+2024-03-06 03:48:27 info: Server listening on port : 8080
+2024-03-06 03:48:27 error: Error: db: connect ECONNREFUSED 127.0.0.1:3306
+    at dbCon (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:57:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:48:58 info: Server listening on port : 8080
+2024-03-06 03:48:58 info: DB connected successfully
+2024-03-06 03:49:02 error: Error: decryptData: invalid algorithm
+    at decryptData (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:15:18)
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:21:27)
+    at Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:26)
+    at run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:124:19)
+    at Namespace.run (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:135:9)
+    at Namespace._add (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\node_modules\socket.io\dist\namespace.js:211:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-03-06 03:49:02 error: Error: authenticateUser: Cannot destructure property 'userId' of 'decoded' as it is null.
+    at authenticateUser (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\middleware\authenticateUser.js:29:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Array.<anonymous> (C:\Users\Bonheur\Desktop\Projects\RwandaRideShare\src\server.js:67:20)
+2024-03-06 03:49:54 info: Server listening on port : 8080
+2024-03-06 03:49:54 info: DB connected successfully
+2024-03-06 03:50:03 info: Server listening on port : 8080
+2024-03-06 03:50:03 info: DB connected successfully
+2024-03-06 03:58:34 info: Server listening on port : 8080
+2024-03-06 03:58:34 info: DB connected successfully
+2024-03-06 04:00:07 info: Server listening on port : 8080
+2024-03-06 04:00:07 info: DB connected successfully
+2024-03-06 04:03:33 info: Server listening on port : 8080
+2024-03-06 04:03:33 info: DB connected successfully
+2024-03-06 04:05:03 info: Server listening on port : 8080
+2024-03-06 04:05:03 info: DB connected successfully
+2024-03-06 04:05:07 info: Server listening on port : 8080
+2024-03-06 04:05:07 info: DB connected successfully
+2024-03-06 04:06:34 info: Server listening on port : 8080
+2024-03-06 04:06:34 info: DB connected successfully
+2024-03-06 04:06:55 info: Server listening on port : 8080
+2024-03-06 04:06:55 info: DB connected successfully
+2024-03-06 04:13:06 info: Server listening on port : 8080
+2024-03-06 04:13:06 info: DB connected successfully
+2024-03-06 04:13:52 info: Server listening on port : 8080
+2024-03-06 04:13:52 info: DB connected successfully
+2024-03-06 04:14:16 info: Server listening on port : 8080
+2024-03-06 04:14:16 info: DB connected successfully
+2024-03-06 04:15:15 info: Server listening on port : 8080
+2024-03-06 04:15:15 info: DB connected successfully
+2024-03-06 04:16:31 info: Server listening on port : 8080
+2024-03-06 04:16:31 info: DB connected successfully
+2024-03-06 04:21:28 info: Server listening on port : 8080
+2024-03-06 04:21:28 info: DB connected successfully
+2024-03-06 04:23:03 info: Server listening on port : 8080
+2024-03-06 04:23:03 info: DB connected successfully
+2024-03-06 04:24:25 info: Server listening on port : 8080
+2024-03-06 04:24:25 info: DB connected successfully
+2024-03-06 04:29:48 info: Server listening on port : 8080
+2024-03-06 04:29:48 info: DB connected successfully
+2024-03-06 04:37:31 info: Server listening on port : 8080
+2024-03-06 04:37:31 info: DB connected successfully
+2024-03-06 04:37:39 info: Server listening on port : 8080
+2024-03-06 04:37:39 info: DB connected successfully
+2024-03-06 04:38:28 info: Server listening on port : 8080
+2024-03-06 04:38:28 info: DB connected successfully
+2024-03-06 04:42:50 info: Server listening on port : 8080
+2024-03-06 04:42:50 info: DB connected successfully
