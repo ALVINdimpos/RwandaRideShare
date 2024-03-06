@@ -2,6 +2,7 @@
 
 Welcome to EazyGoRwanda, your premier destination for convenient and sustainable transportation across the beautiful landscapes of Rwanda. At EazyGoRwanda, we believe in fostering community, reducing carbon footprints, and making your journeys not just efficient but memorable.
 
+Postman Workspace Link https://www.postman.com/planetary-shuttle-895172/workspace/rwandarideshare/collection/11350364-098a775f-8747-464d-ba4b-64b5cc5fd63d?action=share&source=copy-link&creator=11350364
 ## Table of Contents
 - [EazyGoRwanda Backend API](#eazygorwanda-backend-api)
   - [Table of Contents](#table-of-contents)
