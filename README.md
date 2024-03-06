@@ -2,7 +2,6 @@
 
 Welcome to EasyGoRwanda, your all-in-one platform for seamless travel and transportation experiences in Rwanda. We aim to simplify and enhance the way you navigate through the beautiful landscapes of Rwanda, ensuring a smooth and convenient journey.
 
-Postman Workspace Link https://www.postman.com/planetary-shuttle-895172/workspace/rwandarideshare/collection/11350364-098a775f-8747-464d-ba4b-64b5cc5fd63d?action=share&source=copy-link&creator=11350364
 ## Table of Contents
 - [EazyGoRwanda: Simplifying Travel and Transportation in Rwanda Backend API](#eazygorwanda-simplifying-travel-and-transportation-in-rwanda-backend-api)
   - [Table of Contents](#table-of-contents)

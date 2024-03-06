@@ -84,7 +84,7 @@ web_modules/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
-
+.env
 # Next.js build output
 .next
 out
@@ -143,3 +143,5 @@ public_key.pem
 .DS_Store
 qrcodes/*
 public/*
+.vscode
+.DS_Store
