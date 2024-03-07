@@ -133,7 +133,6 @@ dist
 
 # uploads
 uploads/images
-.husky/
 
 # Ignore private and public keys
 private_key.pem
