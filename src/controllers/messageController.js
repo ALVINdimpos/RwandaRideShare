@@ -4,9 +4,6 @@ const { validateFields } = require('../utils');
 const logger = require('../../loggerConfigs');
 
 // POST endpoint to send a message
-const { Message, User } = require('../models');
-const { validateFields } = require('../utils');
-const logger = require('../../loggerConfigs');
 const sendMessage = async (req, res) => {
   const { receiverId, message } = req.body;
   const { userId } = req;

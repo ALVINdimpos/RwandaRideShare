@@ -12,6 +12,7 @@ const reviewsRoutes = require('./reviewRoutes');
 const requestsRoutes = require('./requestRoutes');
 const notificationsRoutes = require('./notificationRoutes');
 const subscriptionRoutes = require('./subscriptionRoutes');
+const contactusRoutes = require('./contactusRoutes');
 // router instance
 const router = express.Router();
 
@@ -27,6 +28,7 @@ router.use('/reviews', reviewsRoutes);
 router.use('/requests', requestsRoutes);
 router.use('/notifications', notificationsRoutes);
 router.use('/subscriptions', subscriptionRoutes);
+router.use('/contact-us', contactusRoutes);
 
 // export
 module.exports = router;
