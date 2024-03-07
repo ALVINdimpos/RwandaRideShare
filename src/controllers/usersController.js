@@ -113,15 +113,18 @@ const addUser = async (req, res) => {
         'Account Created'
       );
       try {
-        await sendEmail('driverCreated', 'EazyGoRwanda - Driver Account Created', {
-          email: decryptData(email),
-          fname: decryptData(fname),
-          lname,
-        });
+        await sendEmail(
+          'driverCreated',
+          'EazyGoRwanda - Driver Account Created',
+          {
+            email: decryptData(email),
+            fname: decryptData(fname),
+            lname,
+          }
+        );
       } catch (error) {
         logger.error(`Sending email failed to: ` + email);
       }
-
     } else {
       try {
         await sendEmail(
@@ -136,7 +139,6 @@ const addUser = async (req, res) => {
       } catch (error) {
         logger.error(`Sending email failed to: ` + email);
       }
-
 
       createNotification(
         user.id,

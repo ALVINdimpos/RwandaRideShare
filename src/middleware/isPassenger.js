@@ -53,7 +53,8 @@ const isPassenger = (req, res, next) => {
         if (!isPassengerRole) {
           logger.warn('Access denied: User does not have Passenger role.');
           return res.status(403).json({
-            message: 'Forbidden: Only users with Passenger role are authorized.',
+            message:
+              'Forbidden: Only users with Passenger role are authorized.',
           });
         }
         req.userId = decodedToken.userId;

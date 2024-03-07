@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Requests extends Model {
     /**
@@ -15,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'UserID',
         as: 'user',
       });
-  
     }
   }
   Requests.init(

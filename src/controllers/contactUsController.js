@@ -7,17 +7,17 @@ const createContactUsEntry = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-      // Validate input data
-      const requiredFields = ['name', 'email','message'];
-      const missingFields = validateFields(req, requiredFields);
+    // Validate input data
+    const requiredFields = ['name', 'email', 'message'];
+    const missingFields = validateFields(req, requiredFields);
 
-      if (missingFields.length > 0) {
-        return res.status(400).json({
-          ok: false,
-          message: 'Missing required fields',
-          missingFields,
-        });
-      }
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        ok: false,
+        message: 'Missing required fields',
+        missingFields,
+      });
+    }
 
     // Create a new ContactUs entry in the database
     const contactUsEntry = await ContactUs.create({
@@ -32,7 +32,7 @@ const createContactUsEntry = async (req, res) => {
       data: contactUsEntry,
     });
   } catch (error) {
-   logger.error(`Creating ContactUs entry: ${error.message}`);
+    logger.error(`Creating ContactUs entry: ${error.message}`);
     return res.status(500).json({
       success: false,
       message: 'Internal Server Error',
@@ -94,8 +94,8 @@ const deleteOneContactUsEntry = async (req, res) => {
   }
 };
 module.exports = {
-    createContactUsEntry,
-    getAllContactUsEntries,
-    getOneContactUsEntry,
-    deleteOneContactUsEntry,
+  createContactUsEntry,
+  getAllContactUsEntries,
+  getOneContactUsEntry,
+  deleteOneContactUsEntry,
 };

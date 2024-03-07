@@ -10,7 +10,7 @@ const { isPassenger } = require('../middleware');
 const router = express.Router();
 
 // Reviews routes
-router.post('/',isPassenger, createReview);
+router.post('/', isPassenger, createReview);
 
 router.get('/:userId', getReviewsForUser);
 

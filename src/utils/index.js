@@ -114,7 +114,6 @@ const generateUserPwd = () => {
   return Math.random().toString(36).substring(7);
 };
 
-
 // Function to generate a token
 const generateToken = user => {
   return jwt.sign(user, process.env.JWT_SECRET, {

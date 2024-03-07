@@ -12,8 +12,8 @@ const { isAdmin } = require('../middleware');
 const router = express.Router();
 
 // Roles routes
-router.post('/',isAdmin, addRole);
-router.get('/',  getRoles);
+router.post('/', isAdmin, addRole);
+router.get('/', getRoles);
 router.get('/archived', isAdmin, getArchivedRoles);
 router.get('/:id', isAdmin, getOneRole);
 router.put('/:id', isAdmin, updateRole);

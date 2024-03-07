@@ -19,12 +19,10 @@ const fields = [
 
 // Users routes
 router.post('/', isValidUpload(fields), addUser);
-router.get('/',  getUsers);
+router.get('/', getUsers);
 router.get('/:id', isAdmin, getOneUser);
 router.patch('/:id', isValidUpload(fields), updateUser);
 router.delete('/:id', isAdmin, deleteUser);
 router.put('/approve/:id', isAdmin, approveUserIfIsDriver);
-
-
 
 module.exports = router;

@@ -155,7 +155,7 @@ const getOneSubscription = async (req, res) => {
 const updateSubscription = async (req, res) => {
   try {
     const { id } = req.params;
-    const {userId, startDate, endDate } = req.body;
+    const { userId, startDate, endDate } = req.body;
 
     // Check if the subscription exists
     const subscription = await Subscription.findByPk(id);

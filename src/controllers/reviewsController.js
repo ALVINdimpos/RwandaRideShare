@@ -1,4 +1,4 @@
-const { Reviews, User, } = require('../models');
+const { Reviews, User } = require('../models');
 const logger = require('../../loggerConfigs');
 const { createNotification } = require('../helpers/notifications');
 const sendEmail = require('../helpers/sendEmail');
@@ -58,9 +58,7 @@ const createReview = async (req, res) => {
     sendEmail('CreatedReview', 'RwandaShareRIde - Review Created', {
       email: decryptData(reviewedUser.email),
       name: decryptData(reviewedUser.fname),
-      reviewer: `${decryptData(reviewer.fname)} ${decryptData(
-        reviewer.lname
-      )}`,
+      reviewer: `${decryptData(reviewer.fname)} ${decryptData(reviewer.lname)}`,
       rating: Rating,
       comment: Comment,
     });

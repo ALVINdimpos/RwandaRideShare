@@ -8,6 +8,6 @@ const { isUser } = require('../middleware');
 const router = express.Router();
 
 // Notifications routes
-router.get('/',isUser , getUserNotifications);
+router.get('/', isUser, getUserNotifications);
 
 module.exports = router;

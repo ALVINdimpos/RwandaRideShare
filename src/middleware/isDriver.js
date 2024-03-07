@@ -21,12 +21,12 @@ const isDriver = (req, res, next) => {
       });
     }
 
-      const token = authHeader;
+    const token = authHeader;
     jwt.verify(
       token,
       publicKey,
       { algorithms: ['RS256'] },
-        (err, decodedToken) => {
+      (err, decodedToken) => {
         if (err) {
           logger.error(`JWT verification error: ${err.message}`);
           return res.status(401).json({
@@ -34,8 +34,8 @@ const isDriver = (req, res, next) => {
           });
         }
 
-            const userRoles = decodedToken.roles;
-       const UserID = decodedToken.userId;
+        const userRoles = decodedToken.roles;
+        const UserID = decodedToken.userId;
         if (!userRoles || !Array.isArray(userRoles)) {
           logger.error('User roles are not properly defined.');
           return res.status(403).json({

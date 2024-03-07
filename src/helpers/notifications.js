@@ -11,7 +11,7 @@ const createNotification = async (userId, message, type) => {
     logger.info('Notification created successfully');
   } catch (error) {
     logger.error(`Creating Notification: ${error.message}`);
-    throw error; 
+    throw error;
   }
 };
 

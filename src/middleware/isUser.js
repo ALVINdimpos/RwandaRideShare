@@ -19,7 +19,7 @@ const isUser = (req, res, next) => {
       });
     }
 
-    const token = authHeader ;
+    const token = authHeader;
     jwt.verify(
       token,
       publicKey,

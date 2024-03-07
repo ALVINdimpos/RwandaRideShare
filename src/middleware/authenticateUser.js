@@ -2,7 +2,7 @@
 const { User } = require('../models');
 const logger = require('../../loggerConfigs');
 const jwt = require('jsonwebtoken');
-const fs = require("fs");
+const fs = require('fs');
 
 const decryptData = async token => {
   const publicKey = fs.readFileSync('public_key.pem');
@@ -14,7 +14,7 @@ const decryptData = async token => {
     return null;
   }
 };
-const authenticateUser = async (token) => {
+const authenticateUser = async token => {
   try {
     const decoded = await decryptData(token);
     const { userId } = decoded;

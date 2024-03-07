@@ -8,7 +8,7 @@ const {
   takeAndApproveRequest,
 } = require('../controllers/requestsController');
 
-const { isPassenger,isDriver } = require('../middleware');
+const { isPassenger, isDriver } = require('../middleware');
 const router = express.Router();
 
 // Request routes

@@ -9,7 +9,7 @@ const routes = require('./routes/allRoutes');
 const logger = require('../loggerConfigs');
 const checkSubscriptionEndDates = require('./cron/subscriptionCron');
 const { authenticateUser } = require('./middleware/authenticateUser');
-const { Message } = require("./models")
+const { Message } = require('./models');
 config();
 
 const app = express();
@@ -60,26 +60,24 @@ const dbCon = async () => {
 
 // Add this block to handle WebSocket connections
 io.use(async (socket, next) => {
-  console.log("Middleware called");
+  console.log('Middleware called');
   try {
     const token = socket.handshake.headers.token;
     // Implement your user authentication logic based on the token
     const userId = await authenticateUser(token);
     if (!userId) {
-
       return next(new Error('Authentication failed.'));
     }
     socket.userId = userId;
     next();
   } catch (error) {
-    console.log(error, "FULL ERROR");
+    console.log(error, 'FULL ERROR');
     next(new Error('Authentication failed.'));
   }
 });
 
 const ConnectedUsers = [];
 io.on('connection', socket => {
-
   console.log(`User ${socket.userId} connected`);
   ConnectedUsers.push({
     userId: socket.userId,
@@ -87,25 +85,23 @@ io.on('connection', socket => {
   });
   socket.on('disconnect', () => {
     console.log(`User ${socket.userId} disconnected`);
-
   });
   socket.on('newMessage', async data => {
     try {
       await Message.create({
         senderId: Number(socket.userId),
         receiverId: Number(data.id),
-        message: data.message
+        message: data.message,
       });
-
     } catch (error) {
-      console.log("Cant Save message in db");
+      console.log('Cant Save message in db');
     }
     // Support Multiple Tab connection or devices
-    ConnectedUsers.map((items) => {
+    ConnectedUsers.map(items => {
       if (items.userId == data.id) {
-        io.to(items.socketId).emit("getMessage", data.message);
+        io.to(items.socketId).emit('getMessage', data.message);
       }
-    })
+    });
   });
 });
 // port and host

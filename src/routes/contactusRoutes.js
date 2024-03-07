@@ -3,10 +3,10 @@
 const express = require('express');
 const router = express.Router();
 const {
-     createContactUsEntry,
-    getAllContactUsEntries,
-    getOneContactUsEntry,
-    deleteOneContactUsEntry,
+  createContactUsEntry,
+  getAllContactUsEntries,
+  getOneContactUsEntry,
+  deleteOneContactUsEntry,
 } = require('../controllers/contactUsController');
 
 // Route to handle contact us form submission

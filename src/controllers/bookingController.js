@@ -53,14 +53,16 @@ const createBooking = async (req, res) => {
     });
 
     // Retrieve the owner (Driver) of the trip
-    const driverId = trip.DriverID; 
-  
+    const driverId = trip.DriverID;
+
     // send email to the driver
     const driver = await User.findByPk(driverId);
     sendEmail('tripBooked', 'RwandaShareRIde - Trip Booked', {
       email: decryptData(driver.email),
       driver: `${decryptData(driver.fname)}`,
-      passenger: `${decryptData(passenger.fname)} ${decryptData(passenger.lname)}`,
+      passenger: `${decryptData(passenger.fname)} ${decryptData(
+        passenger.lname
+      )}`,
       origin: trip.Origin,
       destination: trip.Destination,
       travelDate: trip.DepartureDate,
@@ -72,7 +74,7 @@ const createBooking = async (req, res) => {
       `You have a new booking from ${passenger.fname} ${passenger.lname}`,
       'Booking'
     );
-  logger.info('Booking successfully created');
+    logger.info('Booking successfully created');
     return res.status(201).json({
       ok: true,
       message: 'Booking successfully created',
@@ -142,15 +144,14 @@ const getOneBooking = async (req, res) => {
 
   try {
     // Fetch a single booking by ID
- const booking = await Bookings.findByPk(id, {
-   include: [
-     {
-       model: User,
-       as: 'passenger',
-     },
-   ],
- });
-
+    const booking = await Bookings.findByPk(id, {
+      include: [
+        {
+          model: User,
+          as: 'passenger',
+        },
+      ],
+    });
 
     if (!booking) {
       logger.error(`Fetching a booking: Booking with ID ${id} not found`);
@@ -247,8 +248,8 @@ const getDriverBookings = async (req, res) => {
     // Fetch all bookings for the driver including associated trips and passengers
     const bookings = await Bookings.findAll({
       where: {
-        '$trip.DriverID$': userId, 
-        BookingStatus: 'Pending', 
+        '$trip.DriverID$': userId,
+        'BookingStatus': 'Pending',
       },
       include: [
         {
@@ -301,7 +302,9 @@ const processBookingRequest = async (req, res) => {
     });
 
     if (!booking) {
-      logger.error(`Processing booking request: Booking with ID ${bookingId} not found`);
+      logger.error(
+        `Processing booking request: Booking with ID ${bookingId} not found`
+      );
       return res.status(404).json({
         ok: false,
         message: 'Booking not found.',
@@ -355,10 +358,14 @@ const processBookingRequest = async (req, res) => {
       });
     }
 
-    logger.info(`Booking ${action === 'approve' ? 'approved' : 'declined'} successfully`);
+    logger.info(
+      `Booking ${action === 'approve' ? 'approved' : 'declined'} successfully`
+    );
     return res.status(200).json({
       ok: true,
-      message: `Booking ${action === 'approve' ? 'approved' : 'declined'} successfully.`,
+      message: `Booking ${
+        action === 'approve' ? 'approved' : 'declined'
+      } successfully.`,
       data: booking,
     });
   } catch (error) {
@@ -369,7 +376,6 @@ const processBookingRequest = async (req, res) => {
     });
   }
 };
-
 
 module.exports = {
   createBooking,
