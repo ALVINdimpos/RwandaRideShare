@@ -12,7 +12,6 @@ const {
 const logger = require('../../loggerConfigs');
 
 const privateKeyPath = process.env.PRIVATE_KEY_PATH;
-
 const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
 
 // login function
