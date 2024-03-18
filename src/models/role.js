@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-
+  
   Role.init(
     {
       id: {
